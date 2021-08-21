@@ -12,8 +12,7 @@ UssdCategory _$UssdCategoryFromJson(Map<String, dynamic> json) {
     description: json['description'] as String,
     icon: json['icon'] as String,
     type: json['type'] as String,
-    items: UssdCategory._fieldsFromJson(
-        json['items'] as List<Map<String, dynamic>>),
+    items: UssdCategory._fieldsFromJson(json['items'] as List),
   );
 }
 

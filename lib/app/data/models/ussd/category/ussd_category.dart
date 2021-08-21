@@ -27,18 +27,19 @@ class UssdCategory extends UssdItem {
   final List<UssdItem> items;
 
   static List<UssdItem> _fieldsFromJson(
-    List<Map<String, dynamic>> fieldList,
+    List<dynamic> fieldList,
   ) =>
       fieldList.map<UssdItem>(
         (e) {
-          if (e['type'] == 'code') {
-            return UssdCode.fromJson(e);
-          } else if (e['type'] == 'category') {
-            return UssdCategory.fromJson(e);
+          final jsonMap = e as Map<String, dynamic>;
+          if (jsonMap['type'] == 'code') {
+            return UssdCode.fromJson(jsonMap);
+          } else if (jsonMap['type'] == 'category') {
+            return UssdCategory.fromJson(jsonMap);
           } else {
             throw ParseUssdCodeException(
-              message: "Unknown type ${e['type']}",
-              map: e,
+              message: "Unknown type ${jsonMap['type']}",
+              map: jsonMap,
             );
           }
         },
