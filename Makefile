@@ -33,3 +33,8 @@ icon:
 	rm -r android/app/src/staging/res
 	cp -r android/app/src/main/res android/app/src/development
 	cp -r android/app/src/main/res android/app/src/staging
+
+.PHONY: tree
+tree:
+	rm file_structure.txt
+	tree lib/ > file_structure.txt

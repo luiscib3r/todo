@@ -9,6 +9,8 @@ environment:
 dependencies:
   beamer: ^0.14.1
   bloc: ^7.0.0
+  dio: ^4.0.0
+  equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^7.1.0
@@ -41,7 +43,7 @@ flutter:
 
   assets:
     - config/ussd_codes.json
-    - logo.png
+    - assets/images/
 
 flutter_icons:
   android: "launcher_icon"

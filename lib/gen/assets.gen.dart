@@ -11,9 +11,17 @@ class $ConfigGen {
   String get ussdCodes => 'config/ussd_codes.json';
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+  AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
+}
+
 class Assets {
   Assets._();
 
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $ConfigGen config = $ConfigGen();
 }
 

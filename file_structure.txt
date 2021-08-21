@@ -1,0 +1,71 @@
+lib/
+├── app
+│   ├── app_bloc_observer.dart
+│   ├── app.dart
+│   ├── app_router.dart
+│   ├── bloc
+│   │   ├── bloc.dart
+│   │   └── theme
+│   │       ├── theme_bloc.dart
+│   │       ├── theme_bloc.freezed.dart
+│   │       ├── theme_event.dart
+│   │       └── theme_state.dart
+│   ├── data
+│   │   ├── core
+│   │   │   ├── core.dart
+│   │   │   └── exceptions
+│   │   │       └── exceptions.dart
+│   │   ├── data.dart
+│   │   ├── datasources
+│   │   │   └── datasources.dart
+│   │   ├── models
+│   │   │   ├── models.dart
+│   │   │   └── ussd
+│   │   │       ├── category
+│   │   │       │   ├── ussd_category.dart
+│   │   │       │   └── ussd_category.g.dart
+│   │   │       ├── code
+│   │   │       │   ├── ussd_code.dart
+│   │   │       │   └── ussd_code.g.dart
+│   │   │       ├── code_field
+│   │   │       │   ├── ussd_code_field.dart
+│   │   │       │   └── ussd_code_field.g.dart
+│   │   │       ├── ussd.dart
+│   │   │       └── ussd_item.dart
+│   │   └── repositories
+│   │       └── repositories.dart
+│   ├── dependencies
+│   │   ├── dependencies.config.dart
+│   │   └── dependencies.dart
+│   ├── theme
+│   │   ├── app_bar_theme.dart
+│   │   ├── dark.dart
+│   │   ├── light.dart
+│   │   └── theme.dart
+│   └── widgets
+│       ├── loading.dart
+│       └── widgets.dart
+├── gen
+│   └── assets.gen.dart
+├── generated_plugin_registrant.dart
+├── home
+│   ├── home.dart
+│   ├── router
+│   │   ├── home_location.dart
+│   │   ├── home_page.dart
+│   │   └── router.dart
+│   ├── view
+│   │   ├── home_view.dart
+│   │   └── view.dart
+│   └── widgets
+│       └── widgets.dart
+├── l10n
+│   ├── arb
+│   │   ├── app_en.arb
+│   │   └── app_es.arb
+│   └── l10n.dart
+├── main_development.dart
+├── main_production.dart
+└── main_staging.dart
+
+23 directories, 45 files
