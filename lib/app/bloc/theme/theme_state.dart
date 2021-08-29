@@ -6,5 +6,7 @@ class ThemeState with _$ThemeState {
     required ThemeMode themeMode,
   }) = _ThemeState;
 
-  factory ThemeState.initial() => const ThemeState(themeMode: ThemeMode.dark);
+  factory ThemeState.initial() => const ThemeState(
+        themeMode: ThemeMode.dark,
+      );
 }

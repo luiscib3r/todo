@@ -40,7 +40,9 @@ class App extends StatelessWidget {
         }
 
         return MaterialApp(
-          theme: darkTheme,
+          theme: lightTheme,
+          darkTheme: darkTheme,
+          debugShowCheckedModeBanner: false,
           home: const Scaffold(
             body: Loading(),
           ),
