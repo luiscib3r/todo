@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
+import 'package:todo/ussd_codes/ussd_codes.dart';
 
 class UssdItemWidget extends StatelessWidget {
   const UssdItemWidget({
@@ -58,19 +59,15 @@ class UssdItemWidget extends StatelessWidget {
         };
       } else {
         return () {
-          // Get.to(
-          //   UssdCodeFormPage(
-          //     code: ussdItem,
-          //   ),
-          // );
+          UssdCodeFormPage.open(context, code: item);
         };
       }
     } else if (ussdItem.type == 'category') {
       return () {
-        // Get.to(
-        //   UssdCategoryPage(ussdItem),
-        //   preventDuplicates: false,
-        // );
+        UssdCategoryPage.open(
+          context,
+          category: ussdItem as UssdCategory,
+        );
       };
     }
 

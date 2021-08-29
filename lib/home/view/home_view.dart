@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo/app/app.dart';
 import 'package:todo/home/home.dart';
 import 'package:todo/l10n/l10n.dart';
+import 'package:todo/ussd_codes/ussd_codes.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class HomeView extends StatelessWidget {
         ),
         body: Column(
           children: [
-            const _AppTabBar(),
+            const AppTabBar(),
             const SizedBox(
               height: 15,
             ),
@@ -45,51 +46,7 @@ class HomeView extends StatelessWidget {
   }
 }
 
-class _AppTabBar extends StatelessWidget {
-  const _AppTabBar({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return TabBar(
-      indicator: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
-        color: Colors.blue,
-      ),
-      isScrollable: true,
-      labelPadding: const EdgeInsets.only(top: 0.5, bottom: 0.5),
-      unselectedLabelColor: Theme.of(context).brightness == Brightness.dark
-          ? Colors.white
-          : Colors.blue,
-      overlayColor: MaterialStateProperty.all(Colors.transparent),
-      tabs: const [
-        SizedBox(
-          height: 64,
-          width: 68,
-          child: Icon(
-            Icons.phone_android_rounded,
-            size: 38,
-          ),
-        ),
-        SizedBox(
-          height: 64,
-          width: 68,
-          child: Icon(
-            Icons.data_usage_rounded,
-            size: 38,
-          ),
-        ),
-        SizedBox(
-          height: 64,
-          width: 68,
-          child: Icon(
-            Icons.wifi,
-            size: 38,
-          ),
-        ),
-      ],
-    );
-  }
-}
 
 //  BlocBuilder<UssdCodeBloc, UssdCodeState>(
 //           builder: (context, state) => state.when(

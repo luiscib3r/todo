@@ -8,7 +8,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:shared_preferences/shared_preferences.dart' as _i5;
 
-import '../../home/bloc/ussd_code_bloc.dart' as _i8;
+import '../../ussd_codes/bloc/ussd_code/ussd_code_bloc.dart' as _i8;
 import '../app.dart' as _i9;
 import '../app_environment.dart' as _i3;
 import '../bloc/theme/theme_bloc.dart' as _i6;

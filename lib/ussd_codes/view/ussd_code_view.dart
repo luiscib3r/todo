@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
+import 'package:todo/ussd_codes/widgets/widgets.dart';
 
-class UssdCodesWidget extends StatelessWidget {
-  const UssdCodesWidget({
+class UssdCodeView extends StatelessWidget {
+  const UssdCodeView({
     Key? key,
     required this.items,
   }) : super(key: key);
@@ -11,6 +12,8 @@ class UssdCodesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView(
+      children: items.map((e) => UssdItemWidget(ussdItem: e)).toList(),
+    );
   }
 }

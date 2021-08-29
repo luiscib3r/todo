@@ -6,6 +6,7 @@ import 'package:todo/app/bloc/bloc.dart';
 import 'package:todo/app/theme/theme.dart';
 import 'package:todo/home/home.dart';
 import 'package:todo/l10n/l10n.dart';
+import 'package:todo/ussd_codes/ussd_codes.dart';
 
 class AppRouter extends StatelessWidget {
   const AppRouter({Key? key}) : super(key: key);
@@ -36,6 +37,7 @@ class AppRouter extends StatelessWidget {
     locationBuilder: BeamerLocationBuilder(
       beamLocations: [
         HomeLocation(),
+        UssdCodesLocation(),
       ],
     ),
   );
