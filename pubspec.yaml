@@ -16,7 +16,6 @@ dependencies:
   flutter_bloc: ^7.1.0
   flutter_localizations:
     sdk: flutter
-  fluttercontactpicker: ^4.5.1
   freezed_annotation: ^0.14.2
   get_it: ^7.2.0
   injectable: ^1.5.0

@@ -176,20 +176,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
-  contact_picker_platform_interface:
-    dependency: transitive
-    description:
-      name: contact_picker_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.5.1"
-  contact_picker_web:
-    dependency: transitive
-    description:
-      name: contact_picker_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.5.1"
   convert:
     dependency: transitive
     description:
@@ -322,13 +308,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  fluttercontactpicker:
-    dependency: "direct main"
-    description:
-      name: fluttercontactpicker
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.5.1"
   freezed:
     dependency: "direct dev"
     description:

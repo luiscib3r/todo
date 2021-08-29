@@ -1,2 +1,2 @@
-export 'contacts.dart';
+export 'icons.dart';
 export 'parse_json.dart';
