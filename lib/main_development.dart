@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:beamer/beamer.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:injectable/injectable.dart';
@@ -13,6 +14,8 @@ void main() {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
+
+  Beamer.setPathUrlStrategy();
 
   runZonedGuarded(
     () => runApp(const App(env: Environment.dev)),

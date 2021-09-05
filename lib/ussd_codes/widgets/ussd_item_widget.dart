@@ -31,7 +31,7 @@ class UssdItemWidget extends StatelessWidget {
         height: 64,
         width: 57,
         child: Hero(
-          tag: ussdItem.name + ussdItem.description,
+          tag: '${ussdItem.name}-${ussdItem.description}',
           child: Icon(
             strIcons[ussdItem.icon],
             size: 32,

@@ -7,22 +7,62 @@ class UssdCategoryPage extends BeamPage {
   UssdCategoryPage({
     required UssdCategory category,
   }) : super(
-          title: category.name,
-          type: BeamPageType.cupertino,
-          child: UssdCategoryView(category: category),
-        );
+            key: ValueKey('category-${category.name}'),
+            title: category.name,
+            type: BeamPageType.cupertino,
+            child: UssdCategoryView(category: category),
+            onPopPage: (context, delegate, page) {
+              final categories = List<UssdCategory>.from(
+                delegate.currentBeamLocation.state.data['categories']
+                    as List<UssdCategory>,
+              );
 
-  static String get pathBlueprint => '/category';
+              categories.remove(categories.last);
 
-  static String route() => '/category';
+              if (categories.isEmpty) {
+                delegate.currentBeamLocation.update(
+                  (state) => state.copyWith(
+                    pathBlueprintSegments: [''],
+                    data: {},
+                  ),
+                );
+              } else {
+                delegate.currentBeamLocation.update(
+                  (state) => state.copyWith(
+                    pathBlueprintSegments: ['category', ':categoryName'],
+                    pathParameters: {
+                      'categoryName': categories.last.name,
+                    },
+                    data: {'categories': categories},
+                  ),
+                );
+              }
+
+              return true;
+            });
+
+  static String get pathBlueprint => '/category/:categoryName';
+
+  static String route(String name) => '/category/$name';
 
   static void open(
     BuildContext context, {
     required UssdCategory category,
-  }) =>
-      context.beamToNamed(route(), data: {'category': category});
+  }) {
+    final state = context.currentBeamLocation.state;
+    final categories = state.data['categories'] != null
+        ? state.data['categories'] as List<UssdCategory>
+        : <UssdCategory>[];
+
+    context.beamToNamed(
+      route(category.name),
+      data: {
+        'categories': categories..add(category),
+      },
+    );
+  }
 
   static bool checkBeamState(BeamState state) =>
-      state.pathBlueprintSegments.contains('category') &&
-      state.data['category'] != null;
+      state.pathParameters.containsKey('categoryName') &&
+      state.data['categories'] != null;
 }

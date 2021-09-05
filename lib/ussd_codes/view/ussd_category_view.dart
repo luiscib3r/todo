@@ -24,7 +24,7 @@ class UssdCategoryView extends StatelessWidget {
             height: 15,
           ),
           Hero(
-            tag: category.name + category.description,
+            tag: '${category.name}-${category.description}',
             child: Icon(
               strIcons[category.icon],
               size: 82,
@@ -36,7 +36,9 @@ class UssdCategoryView extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          ...category.items.map((e) => UssdItemWidget(ussdItem: e)).toList(),
+          ...category.items.map(
+            (e) => UssdItemWidget(ussdItem: e),
+          ),
           const SizedBox(
             height: 5,
           ),

@@ -15,7 +15,9 @@ class UssdCodesLocation extends BeamLocation {
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [
         HomePage(),
         if (UssdCategoryPage.checkBeamState(state))
-          UssdCategoryPage(category: state.data['category'] as UssdCategory),
+          ...(state.data['categories'] as List<UssdCategory>).map(
+            (category) => UssdCategoryPage(category: category),
+          ),
         if (UssdCodeFormPage.checkBeamState(state))
           UssdCodeFormPage(code: state.data['code'] as UssdCode),
       ];

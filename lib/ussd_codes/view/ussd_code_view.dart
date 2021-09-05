@@ -13,7 +13,11 @@ class UssdCodeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: items.map((e) => UssdItemWidget(ussdItem: e)).toList(),
+      children: [
+        ...items.map(
+          (e) => UssdItemWidget(ussdItem: e),
+        )
+      ],
     );
   }
 }

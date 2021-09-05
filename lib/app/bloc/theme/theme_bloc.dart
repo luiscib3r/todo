@@ -15,20 +15,13 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc(
     this._storage,
   ) : super(ThemeState.initial()) {
+    on<_SetLight>(_setLight);
+    on<_SetDark>(_setDark);
+
     _loadFromStorage();
   }
 
   final SharedPreferences _storage;
-
-  @override
-  Stream<ThemeState> mapEventToState(
-    ThemeEvent event,
-  ) async* {
-    yield* event.when(
-      setDark: _setDark,
-      setLight: _setLight,
-    );
-  }
 
   Future<void> _loadFromStorage() async {
     final theme = _storage.getInt('theme');
@@ -40,14 +33,20 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
     }
   }
 
-  Stream<ThemeState> _setDark() async* {
-    yield const ThemeState(themeMode: ThemeMode.dark);
+  Future<void> _setDark(
+    _SetDark event,
+    Emitter<ThemeState> emit,
+  ) async {
+    emit(const ThemeState(themeMode: ThemeMode.dark));
 
     await _storage.setInt('theme', ThemeMode.dark.index);
   }
 
-  Stream<ThemeState> _setLight() async* {
-    yield const ThemeState(themeMode: ThemeMode.light);
+  Future<void> _setLight(
+    _SetLight event,
+    Emitter<ThemeState> emit,
+  ) async {
+    emit(const ThemeState(themeMode: ThemeMode.light));
 
     await _storage.setInt('theme', ThemeMode.light.index);
   }

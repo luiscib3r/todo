@@ -45,12 +45,3 @@ class HomeView extends StatelessWidget {
     );
   }
 }
-
-
-
-//  BlocBuilder<UssdCodeBloc, UssdCodeState>(
-//           builder: (context, state) => state.when(
-//             loading: () => const Loading(),
-//             ready: (items) => UssdCodeView(items: items),
-//             error: (error) => Center(child: Text(error)),
-//           ),
