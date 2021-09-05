@@ -75,7 +75,8 @@ lib/
 │       ├── theme_icon_button.dart
 │       └── widgets.dart
 ├── gen
-│   └── assets.gen.dart
+│   ├── assets.gen.dart
+│   └── fonts.gen.dart
 ├── generated_plugin_registrant.dart
 ├── home
 │   ├── home.dart
@@ -96,6 +97,25 @@ lib/
 ├── main_development.dart
 ├── main_production.dart
 ├── main_staging.dart
+├── settings
+│   ├── bloc
+│   │   ├── bloc.dart
+│   │   └── settings
+│   │       ├── settings_bloc.dart
+│   │       ├── settings_bloc.freezed.dart
+│   │       ├── settings_event.dart
+│   │       └── settings_state.dart
+│   ├── router
+│   │   ├── router.dart
+│   │   ├── settings_location.dart
+│   │   └── settings_page.dart
+│   ├── settings.dart
+│   ├── view
+│   │   ├── settings_view.dart
+│   │   └── view.dart
+│   └── widgets
+│       ├── settings_switch.dart
+│       └── widgets.dart
 └── ussd_codes
     ├── bloc
     │   ├── bloc.dart
@@ -120,4 +140,4 @@ lib/
         ├── ussd_item_widget.dart
         └── widgets.dart
 
-35 directories, 85 files
+41 directories, 99 files

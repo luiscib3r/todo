@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
 import 'package:todo/gen/assets.gen.dart';
 import 'package:todo/l10n/l10n.dart';
+import 'package:todo/settings/settings.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({
@@ -53,7 +54,9 @@ class AppDrawer extends StatelessWidget {
                 AppDrawerTile(
                   title: 'Ajustes',
                   icon: Icons.settings_outlined,
-                  onTap: () {},
+                  onTap: () {
+                    SettingsPage.open(context);
+                  },
                 ),
               ],
             ),

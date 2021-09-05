@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
-import 'package:todo/ussd_codes/widgets/widgets.dart';
+import 'package:todo/ussd_codes/ussd_codes.dart';
 
 class UssdCodeView extends StatelessWidget {
   const UssdCodeView({
