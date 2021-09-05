@@ -67,7 +67,12 @@ lib/
 │   │   ├── light.dart
 │   │   └── theme.dart
 │   └── widgets
+│       ├── app_bar_title.dart
+│       ├── app_drawer.dart
+│       ├── app_drawer_tile.dart
+│       ├── app_tab_bar.dart
 │       ├── loading.dart
+│       ├── theme_icon_button.dart
 │       └── widgets.dart
 ├── gen
 │   └── assets.gen.dart
@@ -82,7 +87,6 @@ lib/
 │   │   ├── home_view.dart
 │   │   └── view.dart
 │   └── widgets
-│       ├── app_tab_bar.dart
 │       └── widgets.dart
 ├── l10n
 │   ├── arb
@@ -116,4 +120,4 @@ lib/
         ├── ussd_item_widget.dart
         └── widgets.dart
 
-35 directories, 81 files
+35 directories, 85 files
