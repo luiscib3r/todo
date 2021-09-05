@@ -30,7 +30,10 @@ class AppDrawerTile extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onTap: onTap,
+        onTap: () {
+          Navigator.pop(context);
+          onTap();
+        },
       ),
     );
   }

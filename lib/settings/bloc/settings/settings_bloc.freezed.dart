@@ -420,11 +420,13 @@ class _$SettingsStateTearOff {
   _SettingsState call(
       {required String appVersion,
       required bool showFloatWidget,
-      required bool turnOffWifi}) {
+      required bool turnOffWifi,
+      required String disclaimerText}) {
     return _SettingsState(
       appVersion: appVersion,
       showFloatWidget: showFloatWidget,
       turnOffWifi: turnOffWifi,
+      disclaimerText: disclaimerText,
     );
   }
 }
@@ -437,6 +439,7 @@ mixin _$SettingsState {
   String get appVersion => throw _privateConstructorUsedError;
   bool get showFloatWidget => throw _privateConstructorUsedError;
   bool get turnOffWifi => throw _privateConstructorUsedError;
+  String get disclaimerText => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SettingsStateCopyWith<SettingsState> get copyWith =>
@@ -448,7 +451,11 @@ abstract class $SettingsStateCopyWith<$Res> {
   factory $SettingsStateCopyWith(
           SettingsState value, $Res Function(SettingsState) then) =
       _$SettingsStateCopyWithImpl<$Res>;
-  $Res call({String appVersion, bool showFloatWidget, bool turnOffWifi});
+  $Res call(
+      {String appVersion,
+      bool showFloatWidget,
+      bool turnOffWifi,
+      String disclaimerText});
 }
 
 /// @nodoc
@@ -465,6 +472,7 @@ class _$SettingsStateCopyWithImpl<$Res>
     Object? appVersion = freezed,
     Object? showFloatWidget = freezed,
     Object? turnOffWifi = freezed,
+    Object? disclaimerText = freezed,
   }) {
     return _then(_value.copyWith(
       appVersion: appVersion == freezed
@@ -479,6 +487,10 @@ class _$SettingsStateCopyWithImpl<$Res>
           ? _value.turnOffWifi
           : turnOffWifi // ignore: cast_nullable_to_non_nullable
               as bool,
+      disclaimerText: disclaimerText == freezed
+          ? _value.disclaimerText
+          : disclaimerText // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -490,7 +502,11 @@ abstract class _$SettingsStateCopyWith<$Res>
           _SettingsState value, $Res Function(_SettingsState) then) =
       __$SettingsStateCopyWithImpl<$Res>;
   @override
-  $Res call({String appVersion, bool showFloatWidget, bool turnOffWifi});
+  $Res call(
+      {String appVersion,
+      bool showFloatWidget,
+      bool turnOffWifi,
+      String disclaimerText});
 }
 
 /// @nodoc
@@ -509,6 +525,7 @@ class __$SettingsStateCopyWithImpl<$Res>
     Object? appVersion = freezed,
     Object? showFloatWidget = freezed,
     Object? turnOffWifi = freezed,
+    Object? disclaimerText = freezed,
   }) {
     return _then(_SettingsState(
       appVersion: appVersion == freezed
@@ -523,6 +540,10 @@ class __$SettingsStateCopyWithImpl<$Res>
           ? _value.turnOffWifi
           : turnOffWifi // ignore: cast_nullable_to_non_nullable
               as bool,
+      disclaimerText: disclaimerText == freezed
+          ? _value.disclaimerText
+          : disclaimerText // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -533,7 +554,8 @@ class _$_SettingsState implements _SettingsState {
   const _$_SettingsState(
       {required this.appVersion,
       required this.showFloatWidget,
-      required this.turnOffWifi});
+      required this.turnOffWifi,
+      required this.disclaimerText});
 
   @override
   final String appVersion;
@@ -541,10 +563,12 @@ class _$_SettingsState implements _SettingsState {
   final bool showFloatWidget;
   @override
   final bool turnOffWifi;
+  @override
+  final String disclaimerText;
 
   @override
   String toString() {
-    return 'SettingsState(appVersion: $appVersion, showFloatWidget: $showFloatWidget, turnOffWifi: $turnOffWifi)';
+    return 'SettingsState(appVersion: $appVersion, showFloatWidget: $showFloatWidget, turnOffWifi: $turnOffWifi, disclaimerText: $disclaimerText)';
   }
 
   @override
@@ -559,7 +583,10 @@ class _$_SettingsState implements _SettingsState {
                     .equals(other.showFloatWidget, showFloatWidget)) &&
             (identical(other.turnOffWifi, turnOffWifi) ||
                 const DeepCollectionEquality()
-                    .equals(other.turnOffWifi, turnOffWifi)));
+                    .equals(other.turnOffWifi, turnOffWifi)) &&
+            (identical(other.disclaimerText, disclaimerText) ||
+                const DeepCollectionEquality()
+                    .equals(other.disclaimerText, disclaimerText)));
   }
 
   @override
@@ -567,7 +594,8 @@ class _$_SettingsState implements _SettingsState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(appVersion) ^
       const DeepCollectionEquality().hash(showFloatWidget) ^
-      const DeepCollectionEquality().hash(turnOffWifi);
+      const DeepCollectionEquality().hash(turnOffWifi) ^
+      const DeepCollectionEquality().hash(disclaimerText);
 
   @JsonKey(ignore: true)
   @override
@@ -579,7 +607,8 @@ abstract class _SettingsState implements SettingsState {
   const factory _SettingsState(
       {required String appVersion,
       required bool showFloatWidget,
-      required bool turnOffWifi}) = _$_SettingsState;
+      required bool turnOffWifi,
+      required String disclaimerText}) = _$_SettingsState;
 
   @override
   String get appVersion => throw _privateConstructorUsedError;
@@ -587,6 +616,8 @@ abstract class _SettingsState implements SettingsState {
   bool get showFloatWidget => throw _privateConstructorUsedError;
   @override
   bool get turnOffWifi => throw _privateConstructorUsedError;
+  @override
+  String get disclaimerText => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SettingsStateCopyWith<_SettingsState> get copyWith =>

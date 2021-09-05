@@ -21,7 +21,6 @@ class SettingsPage extends BeamPage {
 
   static void open(BuildContext context) => context.beamToNamed(
         route(),
-        popBeamLocationOnPop: true,
       );
 
   static bool checkBeamState(BeamState state) =>

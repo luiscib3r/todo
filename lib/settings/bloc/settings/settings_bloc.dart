@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:todo/app/app.dart';
@@ -16,6 +17,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
             appVersion: environment.appVersion,
             showFloatWidget: false,
             turnOffWifi: false,
+            disclaimerText: '',
           ),
         ) {
     on<_LoadData>(_loadData);
@@ -31,11 +33,13 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   ) async {
     final showFloatWidget = await getShowWidgetPreference();
     final turnOffWifi = await getTurnOffWifiPreference();
+    final disclaimerText = await rootBundle.loadString('DISCLAIMER');
 
     emit(
       state.copyWith(
         showFloatWidget: showFloatWidget ?? false,
         turnOffWifi: turnOffWifi ?? false,
+        disclaimerText: disclaimerText,
       ),
     );
   }

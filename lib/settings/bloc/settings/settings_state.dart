@@ -6,5 +6,6 @@ class SettingsState with _$SettingsState {
     required String appVersion,
     required bool showFloatWidget,
     required bool turnOffWifi,
+    required String disclaimerText,
   }) = _SettingsState;
 }

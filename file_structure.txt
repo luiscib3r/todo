@@ -106,14 +106,17 @@ lib/
 │   │       ├── settings_event.dart
 │   │       └── settings_state.dart
 │   ├── router
+│   │   ├── disclaimer_page.dart
 │   │   ├── router.dart
 │   │   ├── settings_location.dart
 │   │   └── settings_page.dart
 │   ├── settings.dart
 │   ├── view
+│   │   ├── disclaimer_view.dart
 │   │   ├── settings_view.dart
 │   │   └── view.dart
 │   └── widgets
+│       ├── settings_button.dart
 │       ├── settings_switch.dart
 │       └── widgets.dart
 └── ussd_codes
@@ -140,4 +143,4 @@ lib/
         ├── ussd_item_widget.dart
         └── widgets.dart
 
-41 directories, 99 files
+41 directories, 102 files

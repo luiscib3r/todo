@@ -44,8 +44,9 @@ flutter:
   assets:
     - config/ussd_codes.json
     - assets/images/
+    - DISCLAIMER
 
-  fonts: 
+  fonts:
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat-Regular.ttf

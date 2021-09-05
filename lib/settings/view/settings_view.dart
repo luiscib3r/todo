@@ -4,7 +4,9 @@ import 'package:todo/app/app.dart';
 import 'package:todo/settings/settings.dart';
 
 class SettingsView extends StatelessWidget {
-  const SettingsView({Key? key}) : super(key: key);
+  const SettingsView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,17 @@ class SettingsView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
+                SettingsButton(
+                  text: 'Términos de uso',
+                  icon: Icons.verified_user,
+                  onPressed: () {
+                    DisclaimerPage.open(
+                      context,
+                      disclaimer: state.disclaimerText,
+                    );
+                  },
+                ),
+                const SizedBox(height: 10),
               ],
             ),
           );
