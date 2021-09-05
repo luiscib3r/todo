@@ -2,7 +2,7 @@
 
 ![logo](logo.png)
 
-[![tests](https://github.com/todo-devs/todo/actions/workflows/tests/badge.svg?branch=main)](https://github.com/todo-devs/todo/actions?query=workflow%3Atests)
+[![tests](https://github.com/todo-devs/todo/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/todo-devs/todo/actions?query=workflow%3Atests)
 [![Last commit](https://img.shields.io/github/last-commit/todo-devs/todo.svg?style=flat)](https://github.com/todo-devs/todo/commits)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/todo-devs/todo)](https://github.com/todo-devs/todo/commits)
 [![Github Stars](https://img.shields.io/github/stars/todo-devs/todo?style=flat&logo=github)](https://github.com/todo-devs/todo/stargazers)
