@@ -34,7 +34,9 @@ icon:
 	cp -r android/app/src/main/res android/app/src/development
 	cp -r android/app/src/main/res android/app/src/staging
 
-.PHONY: tree
-tree:
+.PHONY: report
+report:
 	rm file_structure.txt
 	tree lib/ > file_structure.txt
+	rm lines_of_code.txt
+	find lib/ -name '*.dart' | xargs wc -l > lines_of_code.txt

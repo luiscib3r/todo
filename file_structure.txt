@@ -2,6 +2,7 @@ lib/
 ├── app
 │   ├── app_bloc_observer.dart
 │   ├── app.dart
+│   ├── app_environment.dart
 │   ├── app_router.dart
 │   ├── bloc
 │   │   ├── bloc.dart
@@ -13,11 +14,33 @@ lib/
 │   ├── data
 │   │   ├── core
 │   │   │   ├── core.dart
-│   │   │   └── exceptions
-│   │   │       └── exceptions.dart
+│   │   │   ├── exceptions
+│   │   │   │   └── exceptions.dart
+│   │   │   ├── platform
+│   │   │   │   ├── contacts.dart
+│   │   │   │   ├── http_client
+│   │   │   │   │   ├── adapters
+│   │   │   │   │   │   ├── http_browser_adapter.dart
+│   │   │   │   │   │   ├── http_native_adapter.dart
+│   │   │   │   │   │   └── http_stub_adapter.dart
+│   │   │   │   │   └── http_client.dart
+│   │   │   │   ├── platform_channels.dart
+│   │   │   │   └── platform.dart
+│   │   │   ├── result
+│   │   │   │   ├── result.dart
+│   │   │   │   └── result.freezed.dart
+│   │   │   └── utils
+│   │   │       ├── icons.dart
+│   │   │       ├── parse_json.dart
+│   │   │       └── utils.dart
 │   │   ├── data.dart
 │   │   ├── datasources
-│   │   │   └── datasources.dart
+│   │   │   ├── datasources.dart
+│   │   │   └── ussd
+│   │   │       ├── ussd_assets_datasource.dart
+│   │   │       ├── ussd.dart
+│   │   │       ├── ussd_local_datasource.dart
+│   │   │       └── ussd_remote_datasource.dart
 │   │   ├── models
 │   │   │   ├── models.dart
 │   │   │   └── ussd
@@ -33,7 +56,8 @@ lib/
 │   │   │       ├── ussd.dart
 │   │   │       └── ussd_item.dart
 │   │   └── repositories
-│   │       └── repositories.dart
+│   │       ├── repositories.dart
+│   │       └── ussd_repository.dart
 │   ├── dependencies
 │   │   ├── dependencies.config.dart
 │   │   └── dependencies.dart
@@ -58,6 +82,7 @@ lib/
 │   │   ├── home_view.dart
 │   │   └── view.dart
 │   └── widgets
+│       ├── app_tab_bar.dart
 │       └── widgets.dart
 ├── l10n
 │   ├── arb
@@ -66,6 +91,29 @@ lib/
 │   └── l10n.dart
 ├── main_development.dart
 ├── main_production.dart
-└── main_staging.dart
+├── main_staging.dart
+└── ussd_codes
+    ├── bloc
+    │   ├── bloc.dart
+    │   └── ussd_code
+    │       ├── ussd_code_bloc.dart
+    │       ├── ussd_code_bloc.freezed.dart
+    │       ├── ussd_code_event.dart
+    │       └── ussd_code_state.dart
+    ├── router
+    │   ├── router.dart
+    │   ├── ussd_category_page.dart
+    │   ├── ussd_code_form_page.dart
+    │   └── ussd_codes_location.dart
+    ├── ussd_codes.dart
+    ├── view
+    │   ├── ussd_category_view.dart
+    │   ├── ussd_code_form_view.dart
+    │   ├── ussd_code_view.dart
+    │   └── view.dart
+    └── widgets
+        ├── ussd_code_form.dart
+        ├── ussd_item_widget.dart
+        └── widgets.dart
 
-23 directories, 45 files
+35 directories, 81 files
