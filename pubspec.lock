@@ -176,6 +176,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
+  contact_picker:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "9029676b8dd9d54229f592ffb5385bfd5d1fcf62"
+      url: "https://github.com/correaleyval/contact_picker"
+    source: git
+    version: "0.0.1"
   convert:
     dependency: transitive
     description:

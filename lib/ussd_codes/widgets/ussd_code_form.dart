@@ -59,20 +59,21 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
                         labelText: field.name.toUpperCase(),
                         suffixIcon: IconButton(
                           onPressed: () async {
-                            var number = await getContactPhoneNumber();
-                            number = number.replaceAll('-', '');
+                            final number = await getContactPhoneNumber();
 
-                            phoneNumberController
-                              ..text = number
-                              ..addListener(
-                                () {
-                                  phoneNumberController.selection =
-                                      const TextSelection(
-                                    baseOffset: 8,
-                                    extentOffset: 8,
-                                  );
-                                },
-                              );
+                            if (number != null) {
+                              phoneNumberController
+                                ..text = number
+                                ..addListener(
+                                  () {
+                                    phoneNumberController.selection =
+                                        const TextSelection(
+                                      baseOffset: 8,
+                                      extentOffset: 8,
+                                    );
+                                  },
+                                );
+                            }
                           },
                           icon: const Icon(
                             Icons.contacts,

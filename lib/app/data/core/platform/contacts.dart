@@ -1,12 +1,15 @@
-Future<String> getContactPhoneNumber() async {
-  // final contact = await FlutterContactPicker.pickPhoneContact();
+import 'package:contact_picker/contact_picker.dart';
 
-  // return contact.phoneNumber
-  //     .toString()
-  //     .replaceAll('+53', '')
-  //     .replaceAll(' ', '')
-  //     .replaceAll(RegExp('([a-zA-Z])'), '')
-  //     .replaceAll('()', '');
+final ContactPicker _contactPicker = ContactPicker();
 
-  return '';
+Future<String?> getContactPhoneNumber() async {
+  final contact = await _contactPicker.selectContact();
+
+  return contact?.phoneNumber
+      .toString()
+      .replaceAll('+53', '')
+      .replaceAll(' ', '')
+      .replaceAll(RegExp('([a-zA-Z])'), '')
+      .replaceAll('()', '')
+      .replaceAll('-', '');
 }
