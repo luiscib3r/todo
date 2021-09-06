@@ -22,23 +22,29 @@ import io.flutter.plugin.common.MethodChannel
 
 
 class MainActivity : FlutterActivity() {
-    private val CHANNEL = "com.cubanopensource.todo"
+    private val channel = "com.cubanopensource.todo"
     private lateinit var flEngine: FlutterEngine
-    lateinit var preferences: SharedPreferences
-    lateinit var wifiManager: WifiManager
-    lateinit var widgetService : Intent
+    private lateinit var preferences: SharedPreferences
+    private lateinit var wifiManager: WifiManager
+    private lateinit var widgetService: Intent
 
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
 
-        preferences = applicationContext.getSharedPreferences("${packageName}_preferences", Activity.MODE_PRIVATE)
+        preferences = applicationContext.getSharedPreferences(
+            "${packageName}_preferences",
+            Activity.MODE_PRIVATE
+        )
         wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
 
         widgetService = Intent(this, FloatingWindow::class.java)
 
         flEngine = flutterEngine
 
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
+        MethodChannel(
+            flutterEngine.dartExecutor.binaryMessenger,
+            channel
+        ).setMethodCallHandler { call, result ->
             when (call.method) {
                 //! System info
                 "getWifiIp" -> result.success(getWifiIP())
@@ -47,7 +53,7 @@ class MainActivity : FlutterActivity() {
                 "getAndroidName" -> result.success(getAndroidName())
 
                 //! Call to number
-                "callTo" -> result.success(callTo(call.arguments<String>()))
+                "callTo" -> result.success(callTo(call.arguments()))
                 //! Call permissions handlers
                 "callPermissionState" -> result.success(getCallPermissionState())
                 "reqCallPermission" -> reqCallPermission()
@@ -73,7 +79,7 @@ class MainActivity : FlutterActivity() {
             }
         }
 
-        if(getDrawPermissionState() && getShowWidgetPreference()) {
+        if (getDrawPermissionState() && getShowWidgetPreference()) {
             startService(this.widgetService)
         }
 
@@ -116,11 +122,11 @@ class MainActivity : FlutterActivity() {
 
     //! Show Float Widget
     private fun setTrueShowWidget() {
-        if(!getDrawPermissionState()) {
+        if (!getDrawPermissionState()) {
             reqDrawPermission()
         }
 
-        if(getDrawPermissionState()) {
+        if (getDrawPermissionState()) {
             with(preferences.edit()) {
                 putBoolean("showWidget", true)
                 apply()
@@ -204,13 +210,18 @@ class MainActivity : FlutterActivity() {
 
     //! Status battery
     private fun getBatteryLevel(): Int {
-        val batteryLevel: Int
-        batteryLevel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        val batteryLevel: Int = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val batteryManager = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
             batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
         } else {
-            val intent = ContextWrapper(applicationContext).registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
-            intent!!.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) * 100 / intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
+            val intent = ContextWrapper(applicationContext).registerReceiver(
+                null,
+                IntentFilter(Intent.ACTION_BATTERY_CHANGED)
+            )
+            intent!!.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) * 100 / intent.getIntExtra(
+                BatteryManager.EXTRA_SCALE,
+                -1
+            )
         }
 
         return batteryLevel
@@ -218,7 +229,7 @@ class MainActivity : FlutterActivity() {
 
     //! Android name
     private fun getAndroidName(): String {
-        return Build.VERSION.RELEASE;
+        return Build.VERSION.RELEASE
     }
 
     //! Call to number
@@ -232,9 +243,13 @@ class MainActivity : FlutterActivity() {
         }
     }
 
+
     //! Call permissions handlers
     private fun getCallPermissionState(): Boolean {
-        return (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED)
+        return (ContextCompat.checkSelfPermission(
+            this,
+            android.Manifest.permission.CALL_PHONE
+        ) == PackageManager.PERMISSION_GRANTED)
     }
 
     private fun reqCallPermission() {
@@ -253,7 +268,10 @@ class MainActivity : FlutterActivity() {
 
     private fun reqDrawPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:${packageName}"))
+            val intent = Intent(
+                Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                Uri.parse("package:${packageName}")
+            )
             startActivityForResult(intent, 1)
         }
     }
@@ -262,30 +280,30 @@ class MainActivity : FlutterActivity() {
     @RequiresApi(Build.VERSION_CODES.N_MR1)
     private fun registerShortcuts() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            val shortcutManager = getSystemService<ShortcutManager>(ShortcutManager::class.java)
+            val shortcutManager = getSystemService(ShortcutManager::class.java)
 
             val saldo = ShortcutInfo.Builder(context, "saldo")
-                    .setShortLabel("Saldo")
-                    .setLongLabel("Saldo")
-                    .setIcon(Icon.createWithResource(context, R.drawable.saldo))
-                    .setIntent(Intent(Intent.ACTION_CALL, Uri.parse("tel:*222${Uri.encode("#")}")))
-                    .build()
+                .setShortLabel("Saldo")
+                .setLongLabel("Saldo")
+                .setIcon(Icon.createWithResource(context, R.drawable.saldo))
+                .setIntent(Intent(Intent.ACTION_CALL, Uri.parse("tel:*222${Uri.encode("#")}")))
+                .build()
 
             val bono = ShortcutInfo.Builder(context, "bono")
-                    .setShortLabel("Bono")
-                    .setLongLabel("Bono")
-                    .setIcon(Icon.createWithResource(context, R.drawable.bono))
-                    .setIntent(Intent(Intent.ACTION_CALL, Uri.parse("tel:*222*266${Uri.encode("#")}")))
-                    .build()
+                .setShortLabel("Bono")
+                .setLongLabel("Bono")
+                .setIcon(Icon.createWithResource(context, R.drawable.bono))
+                .setIntent(Intent(Intent.ACTION_CALL, Uri.parse("tel:*222*266${Uri.encode("#")}")))
+                .build()
 
             val datos = ShortcutInfo.Builder(context, "datos")
-                    .setShortLabel("Datos")
-                    .setLongLabel("Datos")
-                    .setIcon(Icon.createWithResource(context, R.drawable.datos))
-                    .setIntent(Intent(Intent.ACTION_CALL, Uri.parse("tel:*222*328${Uri.encode("#")}")))
-                    .build()
+                .setShortLabel("Datos")
+                .setLongLabel("Datos")
+                .setIcon(Icon.createWithResource(context, R.drawable.datos))
+                .setIntent(Intent(Intent.ACTION_CALL, Uri.parse("tel:*222*328${Uri.encode("#")}")))
+                .build()
 
-            shortcutManager!!.dynamicShortcuts = Arrays.asList(saldo, bono, datos)
+            shortcutManager!!.dynamicShortcuts = listOf(saldo, bono, datos)
         }
     }
 }
