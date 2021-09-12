@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo/app/app_router.dart';
-import 'package:todo/app/bloc/bloc.dart';
 import 'package:todo/app/dependencies/dependencies.dart';
 import 'package:todo/app/theme/theme.dart';
 import 'package:todo/app/widgets/widgets.dart';
@@ -33,10 +31,7 @@ class App extends StatelessWidget {
       future: init,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return BlocProvider<ThemeBloc>(
-            create: (context) => getIt(),
-            child: const AppRouter(),
-          );
+          return const AppRouter();
         }
 
         return MaterialApp(

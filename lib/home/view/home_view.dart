@@ -11,36 +11,17 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: AppBarTitle(l10n.appName),
-        ),
-        drawer: const AppDrawer(),
-        drawerEdgeDragWidth: 40,
-        body: Column(
-          children: [
-            const AppTabBar(),
-            const SizedBox(
-              height: 15,
-            ),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  BlocBuilder<UssdCodeBloc, UssdCodeState>(
-                    builder: (context, state) => state.when(
-                      loading: () => const Loading(),
-                      ready: (items) => UssdCodeView(items: items),
-                      error: (error) => Center(child: Text(error)),
-                    ),
-                  ),
-                  const Center(child: Text('DATA')),
-                  const Center(child: Text('WIFI')),
-                ],
-              ),
-            ),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        title: AppBarTitle(l10n.appName),
+      ),
+      // drawer: const AppDrawer(),
+      // drawerEdgeDragWidth: 40,
+      body: BlocBuilder<UssdCodeBloc, UssdCodeState>(
+        builder: (context, state) => state.when(
+          loading: () => const Loading(),
+          ready: (items) => UssdCodeView(items: items),
+          error: (error) => Center(child: Text(error)),
         ),
       ),
     );
