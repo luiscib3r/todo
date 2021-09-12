@@ -6,6 +6,5 @@ final lightTheme = ThemeData(
     foregroundColor: Colors.blue,
   ),
   brightness: Brightness.light,
-  accentColor: Colors.blue,
   fontFamily: 'Montserrat',
 );

@@ -1,7 +1,7 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
 import 'package:todo/settings/settings.dart';
-import 'package:beamer/beamer.dart';
 
 class DisclaimerView extends StatelessWidget {
   const DisclaimerView({
