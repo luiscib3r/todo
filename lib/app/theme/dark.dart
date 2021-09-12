@@ -6,6 +6,5 @@ final darkTheme = ThemeData(
     foregroundColor: Colors.white,
   ),
   brightness: Brightness.dark,
-  accentColor: Colors.blue,
   fontFamily: 'Montserrat',
 );
