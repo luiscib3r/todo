@@ -8,6 +8,7 @@ class SettingsLocation extends BeamLocation {
   List get pathBlueprints => [
         SettingsPage.pathBlueprint,
         DisclaimerPage.pathBlueprint,
+        UpdateUssdPage.pathBlueprint,
       ];
 
   @override
@@ -18,5 +19,6 @@ class SettingsLocation extends BeamLocation {
           DisclaimerPage(
             disclaimer: state.data['disclaimer'] as String,
           ),
+        if (UpdateUssdPage.checkBeamState(state)) UpdateUssdPage(),
       ];
 }

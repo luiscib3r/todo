@@ -47,12 +47,12 @@ class AppDrawer extends StatelessWidget {
                   ),
                 ),
                 AppDrawerTile(
-                  title: 'Cuentas',
+                  title: l10n.accounts,
                   icon: Icons.account_circle_outlined,
                   onTap: () {},
                 ),
                 AppDrawerTile(
-                  title: 'Ajustes',
+                  title: l10n.settings,
                   icon: Icons.settings_outlined,
                   onTap: () {
                     SettingsPage.open(context);

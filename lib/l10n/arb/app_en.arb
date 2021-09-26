@@ -21,5 +21,9 @@
     "fourDigitsKey": "The key must contain 4 digits",
     "notSymbolsKey": "The key must not contain symbols",
     "digitsOfCard": "The card number must contain 16 digits",
-    "talkWithUs": "Talk with us"
+    "talkWithUs": "Talk with us",
+    "accounts": "Cuentas",
+    "updateUssdCodes": "Update USSD codes",
+    "updateCodeSuccess": "Check successful, codes have been updated",
+    "updateCodeError": "An error occurred while downloading the USSD codes. Please check your connection and try again."
 }

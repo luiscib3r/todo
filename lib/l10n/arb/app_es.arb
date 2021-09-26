@@ -21,5 +21,9 @@
     "fourDigitsKey": "La clave debe contener 4 dígitos",
     "notSymbolsKey": "La clave no debe contener símbolos",
     "digitsOfCard": "El número de la tarjeta debe contener 16 dígitos",
-    "talkWithUs": "Habla con nosotros"
+    "talkWithUs": "Habla con nosotros",
+    "accounts": "Cuentas",
+    "updateUssdCodes": "Actualizar códigos USSD",
+    "updateCodeSuccess": "Comprobación exitosa, los códigos han sido actualizados",
+    "updateCodeError": "Ha ocurrido un error en la descarga de los códigos USSD. Revise su conexión e inténtelo nuevamente."
 }

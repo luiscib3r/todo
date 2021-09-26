@@ -66,6 +66,14 @@ class SettingsView extends StatelessWidget {
                     }
                   },
                 ),
+                const SizedBox(height: 10),
+                SettingsButton(
+                  text: l10n.updateUssdCodes,
+                  icon: Icons.file_download,
+                  onPressed: () {
+                    UpdateUssdPage.open(context);
+                  },
+                ),
               ],
             ),
           );
