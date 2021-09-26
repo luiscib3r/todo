@@ -5,11 +5,13 @@ abstract class AppEnvironment {
     required this.appVersion,
     required this.ussdCodesRemote,
     required this.ussdCodesHashRemote,
+    required this.telegramGroupUrl,
   });
 
   final String appVersion;
   final String ussdCodesRemote;
   final String ussdCodesHashRemote;
+  final String telegramGroupUrl;
 }
 
 @prod
@@ -21,6 +23,7 @@ class AppEnvironmentProd extends AppEnvironment {
           ussdCodesHashRemote:
               'https://todo-devs.github.io/todo-json/hash.json',
           ussdCodesRemote: 'https://todo-devs.github.io/todo-json/config.json',
+          telegramGroupUrl: 'https://t.me/todoapp_cuba',
         );
 }
 
@@ -33,5 +36,6 @@ class AppEnvironmentDev extends AppEnvironment {
           ussdCodesHashRemote:
               'https://todo-devs.github.io/todo-json/hash.json',
           ussdCodesRemote: 'https://todo-devs.github.io/todo-json/config.json',
+          telegramGroupUrl: 'https://t.me/todoapp_cuba',
         );
 }

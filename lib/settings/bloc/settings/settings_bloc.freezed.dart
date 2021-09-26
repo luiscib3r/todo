@@ -421,12 +421,14 @@ class _$SettingsStateTearOff {
       {required String appVersion,
       required bool showFloatWidget,
       required bool turnOffWifi,
-      required String disclaimerText}) {
+      required String disclaimerText,
+      required String telegramGroupUrl}) {
     return _SettingsState(
       appVersion: appVersion,
       showFloatWidget: showFloatWidget,
       turnOffWifi: turnOffWifi,
       disclaimerText: disclaimerText,
+      telegramGroupUrl: telegramGroupUrl,
     );
   }
 }
@@ -440,6 +442,7 @@ mixin _$SettingsState {
   bool get showFloatWidget => throw _privateConstructorUsedError;
   bool get turnOffWifi => throw _privateConstructorUsedError;
   String get disclaimerText => throw _privateConstructorUsedError;
+  String get telegramGroupUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SettingsStateCopyWith<SettingsState> get copyWith =>
@@ -455,7 +458,8 @@ abstract class $SettingsStateCopyWith<$Res> {
       {String appVersion,
       bool showFloatWidget,
       bool turnOffWifi,
-      String disclaimerText});
+      String disclaimerText,
+      String telegramGroupUrl});
 }
 
 /// @nodoc
@@ -473,6 +477,7 @@ class _$SettingsStateCopyWithImpl<$Res>
     Object? showFloatWidget = freezed,
     Object? turnOffWifi = freezed,
     Object? disclaimerText = freezed,
+    Object? telegramGroupUrl = freezed,
   }) {
     return _then(_value.copyWith(
       appVersion: appVersion == freezed
@@ -491,6 +496,10 @@ class _$SettingsStateCopyWithImpl<$Res>
           ? _value.disclaimerText
           : disclaimerText // ignore: cast_nullable_to_non_nullable
               as String,
+      telegramGroupUrl: telegramGroupUrl == freezed
+          ? _value.telegramGroupUrl
+          : telegramGroupUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -506,7 +515,8 @@ abstract class _$SettingsStateCopyWith<$Res>
       {String appVersion,
       bool showFloatWidget,
       bool turnOffWifi,
-      String disclaimerText});
+      String disclaimerText,
+      String telegramGroupUrl});
 }
 
 /// @nodoc
@@ -526,6 +536,7 @@ class __$SettingsStateCopyWithImpl<$Res>
     Object? showFloatWidget = freezed,
     Object? turnOffWifi = freezed,
     Object? disclaimerText = freezed,
+    Object? telegramGroupUrl = freezed,
   }) {
     return _then(_SettingsState(
       appVersion: appVersion == freezed
@@ -544,6 +555,10 @@ class __$SettingsStateCopyWithImpl<$Res>
           ? _value.disclaimerText
           : disclaimerText // ignore: cast_nullable_to_non_nullable
               as String,
+      telegramGroupUrl: telegramGroupUrl == freezed
+          ? _value.telegramGroupUrl
+          : telegramGroupUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -555,7 +570,8 @@ class _$_SettingsState implements _SettingsState {
       {required this.appVersion,
       required this.showFloatWidget,
       required this.turnOffWifi,
-      required this.disclaimerText});
+      required this.disclaimerText,
+      required this.telegramGroupUrl});
 
   @override
   final String appVersion;
@@ -565,10 +581,12 @@ class _$_SettingsState implements _SettingsState {
   final bool turnOffWifi;
   @override
   final String disclaimerText;
+  @override
+  final String telegramGroupUrl;
 
   @override
   String toString() {
-    return 'SettingsState(appVersion: $appVersion, showFloatWidget: $showFloatWidget, turnOffWifi: $turnOffWifi, disclaimerText: $disclaimerText)';
+    return 'SettingsState(appVersion: $appVersion, showFloatWidget: $showFloatWidget, turnOffWifi: $turnOffWifi, disclaimerText: $disclaimerText, telegramGroupUrl: $telegramGroupUrl)';
   }
 
   @override
@@ -586,7 +604,10 @@ class _$_SettingsState implements _SettingsState {
                     .equals(other.turnOffWifi, turnOffWifi)) &&
             (identical(other.disclaimerText, disclaimerText) ||
                 const DeepCollectionEquality()
-                    .equals(other.disclaimerText, disclaimerText)));
+                    .equals(other.disclaimerText, disclaimerText)) &&
+            (identical(other.telegramGroupUrl, telegramGroupUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.telegramGroupUrl, telegramGroupUrl)));
   }
 
   @override
@@ -595,7 +616,8 @@ class _$_SettingsState implements _SettingsState {
       const DeepCollectionEquality().hash(appVersion) ^
       const DeepCollectionEquality().hash(showFloatWidget) ^
       const DeepCollectionEquality().hash(turnOffWifi) ^
-      const DeepCollectionEquality().hash(disclaimerText);
+      const DeepCollectionEquality().hash(disclaimerText) ^
+      const DeepCollectionEquality().hash(telegramGroupUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -608,7 +630,8 @@ abstract class _SettingsState implements SettingsState {
       {required String appVersion,
       required bool showFloatWidget,
       required bool turnOffWifi,
-      required String disclaimerText}) = _$_SettingsState;
+      required String disclaimerText,
+      required String telegramGroupUrl}) = _$_SettingsState;
 
   @override
   String get appVersion => throw _privateConstructorUsedError;
@@ -618,6 +641,8 @@ abstract class _SettingsState implements SettingsState {
   bool get turnOffWifi => throw _privateConstructorUsedError;
   @override
   String get disclaimerText => throw _privateConstructorUsedError;
+  @override
+  String get telegramGroupUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SettingsStateCopyWith<_SettingsState> get copyWith =>

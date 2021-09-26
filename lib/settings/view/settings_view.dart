@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:todo/app/app.dart';
+import 'package:todo/l10n/l10n.dart';
 import 'package:todo/settings/settings.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({
@@ -13,9 +16,11 @@ class SettingsView extends StatelessWidget {
     final bloc = context.read<SettingsBloc>();
     final appVersion = bloc.state.appVersion;
 
+    final l10n = context.l10n;
+
     return Scaffold(
       appBar: AppBar(
-        title: const AppBarTitle('Ajustes'),
+        title: AppBarTitle(l10n.settings),
       ),
       body: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
@@ -25,14 +30,14 @@ class SettingsView extends StatelessWidget {
               children: [
                 const SizedBox(height: 30),
                 SettingsSwitch(
-                  text: 'Activar widget flotante',
+                  text: l10n.activateFloatingWidget,
                   value: state.showFloatWidget,
                   onChanged: (value) => bloc.add(
                     SettingsEvent.showFloatWidget(value),
                   ),
                 ),
                 SettingsSwitch(
-                  text: 'Apagar wifi al desconectar',
+                  text: l10n.turnOffWifi,
                   value: state.turnOffWifi,
                   onChanged: (value) => bloc.add(
                     SettingsEvent.turnOffWifi(value),
@@ -40,7 +45,7 @@ class SettingsView extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 SettingsButton(
-                  text: 'Términos de uso',
+                  text: l10n.termOfUse,
                   icon: Icons.verified_user,
                   onPressed: () {
                     DisclaimerPage.open(
@@ -50,6 +55,25 @@ class SettingsView extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 10),
+                SettingsButton(
+                  text: l10n.talkWithUs,
+                  faIcon: FontAwesomeIcons.telegram,
+                  onPressed: () async {
+                    final url = state.telegramGroupUrl;
+
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    }
+                  },
+                ),
+                const SizedBox(height: 10),
+                SettingsButton(
+                  text: l10n.updateUssdCodes,
+                  icon: Icons.file_download,
+                  onPressed: () {
+                    UpdateUssdPage.open(context);
+                  },
+                ),
               ],
             ),
           );

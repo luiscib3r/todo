@@ -7,5 +7,6 @@ class SettingsState with _$SettingsState {
     required bool showFloatWidget,
     required bool turnOffWifi,
     required String disclaimerText,
+    required String telegramGroupUrl,
   }) = _SettingsState;
 }

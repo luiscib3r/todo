@@ -9,16 +9,17 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:shared_preferences/shared_preferences.dart' as _i7;
 
 import '../../settings/bloc/settings/settings_bloc.dart' as _i5;
-import '../../ussd_codes/bloc/ussd_code/ussd_code_bloc.dart' as _i10;
+import '../../settings/bloc/update_ussd/update_ussd_bloc.dart' as _i9;
+import '../../ussd_codes/bloc/ussd_code/ussd_code_bloc.dart' as _i11;
 import '../app.dart' as _i6;
 import '../app_environment.dart' as _i3;
 import '../bloc/theme/theme_bloc.dart' as _i8;
 import '../data/core/platform/http_client/http_client.dart' as _i4;
-import '../data/datasources/ussd/ussd_assets_datasource.dart' as _i9;
-import '../data/datasources/ussd/ussd_local_datasource.dart' as _i11;
-import '../data/datasources/ussd/ussd_remote_datasource.dart' as _i12;
-import '../data/repositories/ussd_repository.dart' as _i13;
-import 'dependencies.dart' as _i14;
+import '../data/datasources/ussd/ussd_assets_datasource.dart' as _i10;
+import '../data/datasources/ussd/ussd_local_datasource.dart' as _i12;
+import '../data/datasources/ussd/ussd_remote_datasource.dart' as _i13;
+import '../data/repositories/ussd_repository.dart' as _i14;
+import 'dependencies.dart' as _i15;
 
 const String _prod = 'prod';
 const String _dev = 'dev';
@@ -39,18 +40,20 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   await gh.factoryAsync<_i7.SharedPreferences>(() => registerModule.prefs,
       preResolve: true);
   gh.factory<_i8.ThemeBloc>(() => _i8.ThemeBloc(get<_i7.SharedPreferences>()));
-  gh.factory<_i9.UssdAssetsDatasource>(() => _i9.UssdAssetsDatasource());
-  gh.factory<_i10.UssdCodeBloc>(
-      () => _i10.UssdCodeBloc(get<_i6.UssdRepository>()));
-  gh.factory<_i11.UssdLocalDatasource>(
-      () => _i11.UssdLocalDatasource(get<_i7.SharedPreferences>()));
-  gh.factory<_i12.UssdRemoteDatasource>(() => _i12.UssdRemoteDatasource(
+  gh.factory<_i9.UpdateUssdBloc>(
+      () => _i9.UpdateUssdBloc(get<_i6.UssdRepository>()));
+  gh.factory<_i10.UssdAssetsDatasource>(() => _i10.UssdAssetsDatasource());
+  gh.factory<_i11.UssdCodeBloc>(
+      () => _i11.UssdCodeBloc(get<_i6.UssdRepository>()));
+  gh.factory<_i12.UssdLocalDatasource>(
+      () => _i12.UssdLocalDatasource(get<_i7.SharedPreferences>()));
+  gh.factory<_i13.UssdRemoteDatasource>(() => _i13.UssdRemoteDatasource(
       get<_i6.AppEnvironment>(), get<_i6.HttpClient>()));
-  gh.factory<_i13.UssdRepository>(() => _i13.UssdRepository(
+  gh.factory<_i14.UssdRepository>(() => _i14.UssdRepository(
       get<_i6.UssdAssetsDatasource>(),
       get<_i6.UssdLocalDatasource>(),
       get<_i6.UssdRemoteDatasource>()));
   return get;
 }
 
-class _$RegisterModule extends _i14.RegisterModule {}
+class _$RegisterModule extends _i15.RegisterModule {}
