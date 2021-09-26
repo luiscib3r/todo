@@ -35,7 +35,7 @@ class HomeView extends StatelessWidget {
                       error: (error) => Center(child: Text(error)),
                     ),
                   ),
-                  const Center(child: Text('DATA')),
+                  const Center(child: Text('RECENT')),
                   const Center(child: Text('WIFI')),
                 ],
               ),

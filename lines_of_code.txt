@@ -1,7 +1,7 @@
      4 lib/ussd_codes/ussd_codes.dart
     78 lib/ussd_codes/widgets/ussd_item_widget.dart
      2 lib/ussd_codes/widgets/widgets.dart
-   298 lib/ussd_codes/widgets/ussd_code_form.dart
+   300 lib/ussd_codes/widgets/ussd_code_form.dart
    541 lib/ussd_codes/bloc/ussd_code/ussd_code_bloc.freezed.dart
     37 lib/ussd_codes/bloc/ussd_code/ussd_code_bloc.dart
      6 lib/ussd_codes/bloc/ussd_code/ussd_code_event.dart
@@ -31,35 +31,36 @@
      7 lib/app/bloc/theme/theme_event.dart
     12 lib/app/bloc/theme/theme_state.dart
      2 lib/app/theme/theme.dart
-    11 lib/app/theme/light.dart
-    11 lib/app/theme/dark.dart
-     8 lib/app/theme/app_bar_theme.dart
-    37 lib/app/app_environment.dart
+    10 lib/app/theme/light.dart
+    10 lib/app/theme/dark.dart
+     7 lib/app/theme/app_bar_theme.dart
+    41 lib/app/app_environment.dart
     17 lib/app/app_bloc_observer.dart
     53 lib/app/app.dart
-    56 lib/app/dependencies/dependencies.config.dart
+    59 lib/app/dependencies/dependencies.config.dart
     18 lib/app/dependencies/dependencies.dart
     13 lib/app/data/core/utils/parse_json.dart
      2 lib/app/data/core/utils/utils.dart
     27 lib/app/data/core/utils/icons.dart
     17 lib/app/data/core/exceptions/exceptions.dart
      4 lib/app/data/core/core.dart
-    21 lib/app/data/core/platform/http_client/http_client.dart
+    25 lib/app/data/core/platform/http_client/http_client.dart
+   284 lib/app/data/core/platform/http_client/http_logger.dart
      3 lib/app/data/core/platform/http_client/adapters/http_browser_adapter.dart
      3 lib/app/data/core/platform/http_client/adapters/http_native_adapter.dart
      3 lib/app/data/core/platform/http_client/adapters/http_stub_adapter.dart
-    12 lib/app/data/core/platform/contacts.dart
+    15 lib/app/data/core/platform/contacts.dart
      3 lib/app/data/core/platform/platform.dart
     42 lib/app/data/core/platform/platform_channels.dart
    305 lib/app/data/core/result/result.freezed.dart
      9 lib/app/data/core/result/result.dart
      1 lib/app/data/datasources/datasources.dart
-    50 lib/app/data/datasources/ussd/ussd_local_datasource.dart
+    62 lib/app/data/datasources/ussd/ussd_local_datasource.dart
      3 lib/app/data/datasources/ussd/ussd.dart
     27 lib/app/data/datasources/ussd/ussd_assets_datasource.dart
     50 lib/app/data/datasources/ussd/ussd_remote_datasource.dart
      1 lib/app/data/repositories/repositories.dart
-    60 lib/app/data/repositories/ussd_repository.dart
+    68 lib/app/data/repositories/ussd_repository.dart
      1 lib/app/data/models/models.dart
     26 lib/app/data/models/ussd/category/ussd_category.g.dart
     65 lib/app/data/models/ussd/category/ussd_category.dart
@@ -73,24 +74,30 @@
     10 lib/gen/fonts.gen.dart
     75 lib/gen/assets.gen.dart
     24 lib/main_development.dart
-    52 lib/settings/widgets/settings_button.dart
+    62 lib/settings/widgets/settings_button.dart
      2 lib/settings/widgets/widgets.dart
     34 lib/settings/widgets/settings_switch.dart
-     1 lib/settings/bloc/bloc.dart
+     2 lib/settings/bloc/bloc.dart
      8 lib/settings/bloc/settings/settings_event.dart
-    72 lib/settings/bloc/settings/settings_bloc.dart
-   625 lib/settings/bloc/settings/settings_bloc.freezed.dart
-    11 lib/settings/bloc/settings/settings_state.dart
+    73 lib/settings/bloc/settings/settings_bloc.dart
+   650 lib/settings/bloc/settings/settings_bloc.freezed.dart
+    12 lib/settings/bloc/settings/settings_state.dart
+    45 lib/settings/bloc/update_ussd/update_ussd_bloc.dart
+     5 lib/settings/bloc/update_ussd/update_ussd_event.dart
+     9 lib/settings/bloc/update_ussd/update_ussd_state.dart
+   298 lib/settings/bloc/update_ussd/update_ussd_bloc.freezed.dart
      4 lib/settings/settings.dart
-    49 lib/settings/view/disclaimer_view.dart
-    74 lib/settings/view/settings_view.dart
-     1 lib/settings/view/view.dart
+    80 lib/settings/view/update_ussd_view.dart
+    53 lib/settings/view/disclaimer_view.dart
+    98 lib/settings/view/settings_view.dart
+     2 lib/settings/view/view.dart
     32 lib/settings/router/disclaimer_page.dart
-     3 lib/settings/router/router.dart
+    32 lib/settings/router/update_ussd_page.dart
+     4 lib/settings/router/router.dart
     28 lib/settings/router/settings_page.dart
-    22 lib/settings/router/settings_location.dart
+    24 lib/settings/router/settings_location.dart
     15 lib/l10n/l10n.dart
-    15 lib/generated_plugin_registrant.dart
+    18 lib/generated_plugin_registrant.dart
      1 lib/home/widgets/widgets.dart
      3 lib/home/home.dart
     48 lib/home/view/home_view.dart
@@ -98,4 +105,4 @@
      2 lib/home/router/router.dart
     15 lib/home/router/home_location.dart
     28 lib/home/router/home_page.dart
-  4346 total
+  5205 total

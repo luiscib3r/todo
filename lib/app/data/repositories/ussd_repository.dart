@@ -15,9 +15,16 @@ class UssdRepository {
 
   Future<Result<List<UssdItem>>> getUssdCodes() async {
     try {
-      final ussdItems = await _localDatasource.getUssdCodes();
+      final lastDay = await _localDatasource.getDay();
+      final actualDay = DateTime.now().day;
 
-      return Result.success(data: ussdItems);
+      if (lastDay != actualDay) {
+        return getUssdCodesRemote();
+      } else {
+        final ussdItems = await _localDatasource.getUssdCodes();
+
+        return Result.success(data: ussdItems);
+      }
     } on UssdCodesCacheException {
       try {
         final ussdItems = await _assetsDatasource.getUssdCodes();
@@ -44,6 +51,7 @@ class UssdRepository {
         return Result.success(data: remoteCodes);
       } else {
         final localCodes = await _localDatasource.getUssdCodes();
+        await _localDatasource.updateDay();
 
         return Result.success(data: localCodes);
       }

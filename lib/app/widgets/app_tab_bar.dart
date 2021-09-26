@@ -29,7 +29,7 @@ class AppTabBar extends StatelessWidget {
           height: 64,
           width: 68,
           child: Icon(
-            Icons.data_usage_rounded,
+            Icons.history,
             size: 38,
           ),
         ),

@@ -23,7 +23,8 @@ lib/
 │   │   │   │   │   │   ├── http_browser_adapter.dart
 │   │   │   │   │   │   ├── http_native_adapter.dart
 │   │   │   │   │   │   └── http_stub_adapter.dart
-│   │   │   │   │   └── http_client.dart
+│   │   │   │   │   ├── http_client.dart
+│   │   │   │   │   └── http_logger.dart
 │   │   │   │   ├── platform_channels.dart
 │   │   │   │   └── platform.dart
 │   │   │   ├── result
@@ -100,20 +101,27 @@ lib/
 ├── settings
 │   ├── bloc
 │   │   ├── bloc.dart
-│   │   └── settings
-│   │       ├── settings_bloc.dart
-│   │       ├── settings_bloc.freezed.dart
-│   │       ├── settings_event.dart
-│   │       └── settings_state.dart
+│   │   ├── settings
+│   │   │   ├── settings_bloc.dart
+│   │   │   ├── settings_bloc.freezed.dart
+│   │   │   ├── settings_event.dart
+│   │   │   └── settings_state.dart
+│   │   └── update_ussd
+│   │       ├── update_ussd_bloc.dart
+│   │       ├── update_ussd_bloc.freezed.dart
+│   │       ├── update_ussd_event.dart
+│   │       └── update_ussd_state.dart
 │   ├── router
 │   │   ├── disclaimer_page.dart
 │   │   ├── router.dart
 │   │   ├── settings_location.dart
-│   │   └── settings_page.dart
+│   │   ├── settings_page.dart
+│   │   └── update_ussd_page.dart
 │   ├── settings.dart
 │   ├── view
 │   │   ├── disclaimer_view.dart
 │   │   ├── settings_view.dart
+│   │   ├── update_ussd_view.dart
 │   │   └── view.dart
 │   └── widgets
 │       ├── settings_button.dart
@@ -143,4 +151,4 @@ lib/
         ├── ussd_item_widget.dart
         └── widgets.dart
 
-41 directories, 102 files
+42 directories, 109 files
