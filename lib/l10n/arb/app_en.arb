@@ -20,5 +20,6 @@
     "onlyMonetaryValues": "Only monetary type values are allowed",
     "fourDigitsKey": "The key must contain 4 digits",
     "notSymbolsKey": "The key must not contain symbols",
-    "digitsOfCard": "The card number must contain 16 digits"
+    "digitsOfCard": "The card number must contain 16 digits",
+    "talkWithUs": "Talk with us"
 }

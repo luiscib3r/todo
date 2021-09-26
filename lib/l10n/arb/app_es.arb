@@ -20,5 +20,6 @@
     "onlyMonetaryValues": "Solo se admiten valores de tipo monetario",
     "fourDigitsKey": "La clave debe contener 4 dígitos",
     "notSymbolsKey": "La clave no debe contener símbolos",
-    "digitsOfCard": "El número de la tarjeta debe contener 16 dígitos"
+    "digitsOfCard": "El número de la tarjeta debe contener 16 dígitos",
+    "talkWithUs": "Habla con nosotros"
 }

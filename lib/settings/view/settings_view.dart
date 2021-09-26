@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:todo/app/app.dart';
 import 'package:todo/l10n/l10n.dart';
 import 'package:todo/settings/settings.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({
@@ -53,6 +55,17 @@ class SettingsView extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 10),
+                SettingsButton(
+                  text: l10n.talkWithUs,
+                  faIcon: FontAwesomeIcons.telegram,
+                  onPressed: () async {
+                    final url = state.telegramGroupUrl;
+
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    }
+                  },
+                ),
               ],
             ),
           );

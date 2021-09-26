@@ -18,6 +18,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
             showFloatWidget: false,
             turnOffWifi: false,
             disclaimerText: '',
+            telegramGroupUrl: environment.telegramGroupUrl,
           ),
         ) {
     on<_LoadData>(_loadData);

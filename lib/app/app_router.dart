@@ -14,12 +14,10 @@ class AppRouter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
-
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, themeState) {
         return MaterialApp.router(
-          title: l10n.appName,
+          title: 'TODO',
           theme: lightTheme,
           darkTheme: darkTheme,
           themeMode: themeState.themeMode,
