@@ -1,4 +1,24 @@
 {
     "@@locale": "en",
-    "appName": "TODO"
+    "appName": "TODO",
+    "accept": "Accept",
+    "fieldTypeError": "The field type {fieldType} is unknown",
+    "@fieldTypeError": {
+        "placeholders": {
+            "fieldType": { "type": "String" }
+        }
+    },
+    "termOfUse": "Term of use",
+    "settings": "Settings",
+    "activateFloatingWidget": "Activate floating widget",
+    "turnOffWifi": "Turn off wifi when disconnecting",
+    "selectContact": "Select contact",
+    "notEmptyField": "This field must not be empty",
+    "digitsWarning": "This field must contain 8 digits",
+    "startWithDigit": "This field must start with the digit 5",
+    "greaterZero": "You must put an amount greater than zero",
+    "onlyMonetaryValues": "Only monetary type values are allowed",
+    "fourDigitsKey": "The key must contain 4 digits",
+    "notSymbolsKey": "The key must not contain symbols",
+    "digitsOfCard": "The card number must contain 16 digits"
 }

@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   beamer: ^0.14.1
-  bloc: ^7.2.0-dev.1
+  bloc: ^7.2.0
   contact_picker:
     git:
       url: https://github.com/correaleyval/contact_picker
@@ -16,7 +16,7 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.1.0
+  flutter_bloc: ^7.3.0
   flutter_localizations:
     sdk: flutter
   freezed_annotation: ^0.14.2
@@ -27,7 +27,7 @@ dependencies:
   shared_preferences: ^2.0.6
 
 dev_dependencies:
-  bloc_test: ^8.1.0
+  bloc_test: ^8.2.0
   build_runner: ^2.1.1
   flutter_gen_runner: ^3.1.1
   flutter_launcher_icons: ^0.9.1

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
+import 'package:todo/l10n/l10n.dart';
 
 class UssdCodeForm extends StatefulWidget {
   const UssdCodeForm({
@@ -37,6 +38,8 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return Form(
       key: _formKey,
       child: ListView(
@@ -75,10 +78,10 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
                                 );
                             }
                           },
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.contacts,
                             color: Colors.blue,
-                            semanticLabel: 'Seleccionar contacto',
+                            semanticLabel: l10n.selectContact,
                           ),
                         ),
                         prefixIcon: const Icon(
@@ -88,15 +91,15 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Este campo no debe estar vacío';
+                          return l10n.notEmptyField;
                         }
 
                         if (value.length < 8) {
-                          return 'Este campo debe contener 8 digitos';
+                          return l10n.digitsWarning;
                         }
 
                         if (value[0] != '5') {
-                          return 'Este campo debe comenzar con el dígito 5';
+                          return l10n.startWithDigit;
                         }
 
                         return null;
@@ -133,21 +136,20 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Este campo no debe estar vacío';
+                            return l10n.notEmptyField;
                           }
 
                           try {
                             final cant = double.parse(value);
 
                             if (cant.isNegative) {
-                              return 'Debe poner una cantidad mayor que cero';
+                              return l10n.greaterZero;
                             }
                             if (value.split('.')[1].length > 2) {
-                              // ignore: lines_longer_than_80_chars
-                              return 'Solo se admiten valores de tipo monetario';
+                              return l10n.onlyMonetaryValues;
                             }
                           } on Exception {
-                            return 'Solo se admiten valores de tipo monetario';
+                            return l10n.onlyMonetaryValues;
                           }
 
                           return null;
@@ -189,19 +191,19 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Este campo no debe estar vacío';
+                          return l10n.notEmptyField;
                         }
 
                         if (value.length != 4) {
-                          return 'La clave debe contener 4 dígitos';
+                          return l10n.fourDigitsKey;
                         }
 
                         try {
                           if (int.parse(value) < 0) {
-                            return 'La clave no debe contener símbolos';
+                            return l10n.notSymbolsKey;
                           }
                         } catch (e) {
-                          return 'La clave no debe contener símbolos';
+                          return l10n.notSymbolsKey;
                         }
 
                         return null;
@@ -237,12 +239,11 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Este campo no debe estar vacío';
+                          return l10n.notEmptyField;
                         }
 
                         if (value.length != 16) {
-                          // ignore: lines_longer_than_80_chars
-                          return 'El número de la tarjeta debe contener 16 dígitos';
+                          return l10n.digitsOfCard;
                         }
 
                         return null;
@@ -263,7 +264,7 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
                   );
               }
 
-              return Text('El tipo de campo ${field.type} es desconocido');
+              return Text(l10n.fieldTypeError(field.type));
             },
           ),
           Padding(

@@ -1,4 +1,24 @@
 {
     "@@locale": "es",
-    "appName": "TODO"
+    "appName": "TODO",
+    "accept": "Aceptar",
+    "fieldTypeError": "El tipo de campo {fieldType} es desconocido",
+    "@fieldTypeError": {
+        "placeholders": {
+            "fieldType": { "type": "String" }
+        }
+    },
+    "termOfUse": "Términos de uso",
+    "settings": "Ajustes",
+    "activateFloatingWidget": "Activar widget flotante",
+    "turnOffWifi": "Apagar wifi al desconectar",
+    "selectContact": "Seleccionar contacto",
+    "notEmptyField": "Este campo no debe estar vacío",
+    "digitsWarning": "Este campo debe contener 8 dígitos",
+    "startWithDigit": "Este campo debe comenzar con el dígito 5",
+    "greaterZero": "Debe poner una cantidad mayor que cero",
+    "onlyMonetaryValues": "Solo se admiten valores de tipo monetario",
+    "fourDigitsKey": "La clave debe contener 4 dígitos",
+    "notSymbolsKey": "La clave no debe contener símbolos",
+    "digitsOfCard": "El número de la tarjeta debe contener 16 dígitos"
 }

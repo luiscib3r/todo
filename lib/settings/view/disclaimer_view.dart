@@ -1,7 +1,9 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
+import 'package:todo/l10n/l10n.dart';
 import 'package:todo/settings/settings.dart';
+
 
 class DisclaimerView extends StatelessWidget {
   const DisclaimerView({
@@ -13,9 +15,11 @@ class DisclaimerView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return Scaffold(
       appBar: AppBar(
-        title: const AppBarTitle('Términos de uso'),
+        title: AppBarTitle(l10n.termOfUse),
       ),
       body: ListView(
         children: [
@@ -34,7 +38,7 @@ class DisclaimerView extends StatelessWidget {
               horizontal: 30,
             ),
             child: SettingsButton(
-              text: 'Aceptar',
+              text: l10n.accept,
               icon: Icons.verified_user,
               onPressed: context.beamBack,
             ),
