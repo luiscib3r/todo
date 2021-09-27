@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo/app/app.dart';
 import 'package:todo/ussd_codes/ussd_codes.dart';
 
@@ -8,9 +9,11 @@ class UssdItemWidget extends StatelessWidget {
   const UssdItemWidget({
     Key? key,
     required this.ussdItem,
+    this.recent,
   }) : super(key: key);
 
   final UssdItem ussdItem;
+  final bool? recent;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,7 @@ class UssdItemWidget extends StatelessWidget {
         height: 64,
         width: 57,
         child: Hero(
-          tag: '${ussdItem.name}-${ussdItem.description}',
+          tag: '${ussdItem.key}-$recent',
           child: Icon(
             strIcons[ussdItem.icon],
             size: 32,
@@ -55,18 +58,22 @@ class UssdItemWidget extends StatelessWidget {
       final item = ussdItem as UssdCode;
       if (item.fields.isEmpty) {
         return () {
+          context.read<UssdCodeBloc>().add(UssdCodeEvent.putItem(ussdItem));
           callTo(item.code);
         };
       } else {
         return () {
+          context.read<UssdCodeBloc>().add(UssdCodeEvent.putItem(ussdItem));
           UssdCodeFormPage.open(context, code: item);
         };
       }
     } else if (ussdItem.type == 'category') {
       return () {
+        context.read<UssdCodeBloc>().add(UssdCodeEvent.putItem(ussdItem));
         UssdCategoryPage.open(
           context,
           category: ussdItem as UssdCategory,
+          recent: recent,
         );
       };
     }

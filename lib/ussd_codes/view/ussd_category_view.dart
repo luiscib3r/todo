@@ -6,9 +6,11 @@ class UssdCategoryView extends StatelessWidget {
   const UssdCategoryView({
     Key? key,
     required this.category,
+    this.recent,
   }) : super(key: key);
 
   final UssdCategory category;
+  final bool? recent;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class UssdCategoryView extends StatelessWidget {
             height: 15,
           ),
           Hero(
-            tag: '${category.name}-${category.description}',
+            tag: '${category.key}-$recent',
             child: Icon(
               strIcons[category.icon],
               size: 82,
@@ -35,7 +37,10 @@ class UssdCategoryView extends StatelessWidget {
             height: 15,
           ),
           ...category.items.map(
-            (e) => UssdItemWidget(ussdItem: e),
+            (e) => UssdItemWidget(
+              ussdItem: e,
+              recent: recent,
+            ),
           ),
           const SizedBox(
             height: 5,

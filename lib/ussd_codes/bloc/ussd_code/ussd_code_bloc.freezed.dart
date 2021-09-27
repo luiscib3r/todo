@@ -19,6 +19,12 @@ class _$UssdCodeEventTearOff {
   _LoadData loadData() {
     return const _LoadData();
   }
+
+  _PutItem putItem(UssdItem item) {
+    return _PutItem(
+      item,
+    );
+  }
 }
 
 /// @nodoc
@@ -29,22 +35,26 @@ mixin _$UssdCodeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadData,
+    required TResult Function(UssdItem item) putItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadData,
+    TResult Function(UssdItem item)? putItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadData value) loadData,
+    required TResult Function(_PutItem value) putItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadData value)? loadData,
+    TResult Function(_PutItem value)? putItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,6 +115,7 @@ class _$_LoadData implements _LoadData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadData,
+    required TResult Function(UssdItem item) putItem,
   }) {
     return loadData();
   }
@@ -113,6 +124,7 @@ class _$_LoadData implements _LoadData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadData,
+    TResult Function(UssdItem item)? putItem,
     required TResult orElse(),
   }) {
     if (loadData != null) {
@@ -125,6 +137,7 @@ class _$_LoadData implements _LoadData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadData value) loadData,
+    required TResult Function(_PutItem value) putItem,
   }) {
     return loadData(this);
   }
@@ -133,6 +146,7 @@ class _$_LoadData implements _LoadData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadData value)? loadData,
+    TResult Function(_PutItem value)? putItem,
     required TResult orElse(),
   }) {
     if (loadData != null) {
@@ -147,6 +161,119 @@ abstract class _LoadData implements UssdCodeEvent {
 }
 
 /// @nodoc
+abstract class _$PutItemCopyWith<$Res> {
+  factory _$PutItemCopyWith(_PutItem value, $Res Function(_PutItem) then) =
+      __$PutItemCopyWithImpl<$Res>;
+  $Res call({UssdItem item});
+}
+
+/// @nodoc
+class __$PutItemCopyWithImpl<$Res> extends _$UssdCodeEventCopyWithImpl<$Res>
+    implements _$PutItemCopyWith<$Res> {
+  __$PutItemCopyWithImpl(_PutItem _value, $Res Function(_PutItem) _then)
+      : super(_value, (v) => _then(v as _PutItem));
+
+  @override
+  _PutItem get _value => super._value as _PutItem;
+
+  @override
+  $Res call({
+    Object? item = freezed,
+  }) {
+    return _then(_PutItem(
+      item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as UssdItem,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PutItem implements _PutItem {
+  const _$_PutItem(this.item);
+
+  @override
+  final UssdItem item;
+
+  @override
+  String toString() {
+    return 'UssdCodeEvent.putItem(item: $item)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PutItem &&
+            (identical(other.item, item) ||
+                const DeepCollectionEquality().equals(other.item, item)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(item);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PutItemCopyWith<_PutItem> get copyWith =>
+      __$PutItemCopyWithImpl<_PutItem>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadData,
+    required TResult Function(UssdItem item) putItem,
+  }) {
+    return putItem(item);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadData,
+    TResult Function(UssdItem item)? putItem,
+    required TResult orElse(),
+  }) {
+    if (putItem != null) {
+      return putItem(item);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadData value) loadData,
+    required TResult Function(_PutItem value) putItem,
+  }) {
+    return putItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadData value)? loadData,
+    TResult Function(_PutItem value)? putItem,
+    required TResult orElse(),
+  }) {
+    if (putItem != null) {
+      return putItem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PutItem implements UssdCodeEvent {
+  const factory _PutItem(UssdItem item) = _$_PutItem;
+
+  UssdItem get item => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PutItemCopyWith<_PutItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$UssdCodeStateTearOff {
   const _$UssdCodeStateTearOff();
 
@@ -154,9 +281,11 @@ class _$UssdCodeStateTearOff {
     return const _Loading();
   }
 
-  _Ready ready({required List<UssdItem> items}) {
+  _Ready ready(
+      {required List<UssdItem> items, required List<UssdItem> recentItems}) {
     return _Ready(
       items: items,
+      recentItems: recentItems,
     );
   }
 
@@ -175,14 +304,15 @@ mixin _$UssdCodeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UssdItem> items) ready,
+    required TResult Function(List<UssdItem> items, List<UssdItem> recentItems)
+        ready,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UssdItem> items)? ready,
+    TResult Function(List<UssdItem> items, List<UssdItem> recentItems)? ready,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -259,7 +389,8 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UssdItem> items) ready,
+    required TResult Function(List<UssdItem> items, List<UssdItem> recentItems)
+        ready,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -269,7 +400,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UssdItem> items)? ready,
+    TResult Function(List<UssdItem> items, List<UssdItem> recentItems)? ready,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -312,7 +443,7 @@ abstract class _Loading implements UssdCodeState {
 abstract class _$ReadyCopyWith<$Res> {
   factory _$ReadyCopyWith(_Ready value, $Res Function(_Ready) then) =
       __$ReadyCopyWithImpl<$Res>;
-  $Res call({List<UssdItem> items});
+  $Res call({List<UssdItem> items, List<UssdItem> recentItems});
 }
 
 /// @nodoc
@@ -327,11 +458,16 @@ class __$ReadyCopyWithImpl<$Res> extends _$UssdCodeStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? items = freezed,
+    Object? recentItems = freezed,
   }) {
     return _then(_Ready(
       items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
+              as List<UssdItem>,
+      recentItems: recentItems == freezed
+          ? _value.recentItems
+          : recentItems // ignore: cast_nullable_to_non_nullable
               as List<UssdItem>,
     ));
   }
@@ -340,14 +476,16 @@ class __$ReadyCopyWithImpl<$Res> extends _$UssdCodeStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Ready implements _Ready {
-  const _$_Ready({required this.items});
+  const _$_Ready({required this.items, required this.recentItems});
 
   @override
   final List<UssdItem> items;
+  @override
+  final List<UssdItem> recentItems;
 
   @override
   String toString() {
-    return 'UssdCodeState.ready(items: $items)';
+    return 'UssdCodeState.ready(items: $items, recentItems: $recentItems)';
   }
 
   @override
@@ -355,12 +493,17 @@ class _$_Ready implements _Ready {
     return identical(this, other) ||
         (other is _Ready &&
             (identical(other.items, items) ||
-                const DeepCollectionEquality().equals(other.items, items)));
+                const DeepCollectionEquality().equals(other.items, items)) &&
+            (identical(other.recentItems, recentItems) ||
+                const DeepCollectionEquality()
+                    .equals(other.recentItems, recentItems)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(items);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(items) ^
+      const DeepCollectionEquality().hash(recentItems);
 
   @JsonKey(ignore: true)
   @override
@@ -371,22 +514,23 @@ class _$_Ready implements _Ready {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UssdItem> items) ready,
+    required TResult Function(List<UssdItem> items, List<UssdItem> recentItems)
+        ready,
     required TResult Function(String message) error,
   }) {
-    return ready(items);
+    return ready(items, recentItems);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UssdItem> items)? ready,
+    TResult Function(List<UssdItem> items, List<UssdItem> recentItems)? ready,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (ready != null) {
-      return ready(items);
+      return ready(items, recentItems);
     }
     return orElse();
   }
@@ -417,9 +561,12 @@ class _$_Ready implements _Ready {
 }
 
 abstract class _Ready implements UssdCodeState {
-  const factory _Ready({required List<UssdItem> items}) = _$_Ready;
+  const factory _Ready(
+      {required List<UssdItem> items,
+      required List<UssdItem> recentItems}) = _$_Ready;
 
   List<UssdItem> get items => throw _privateConstructorUsedError;
+  List<UssdItem> get recentItems => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$ReadyCopyWith<_Ready> get copyWith => throw _privateConstructorUsedError;
 }
@@ -487,7 +634,8 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UssdItem> items) ready,
+    required TResult Function(List<UssdItem> items, List<UssdItem> recentItems)
+        ready,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -497,7 +645,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UssdItem> items)? ready,
+    TResult Function(List<UssdItem> items, List<UssdItem> recentItems)? ready,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

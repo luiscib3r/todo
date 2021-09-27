@@ -7,11 +7,13 @@ class UssdRepository {
     this._assetsDatasource,
     this._localDatasource,
     this._remoteDatasource,
+    this._recentDatasource,
   );
 
   final UssdAssetsDatasource _assetsDatasource;
   final UssdLocalDatasource _localDatasource;
   final UssdRemoteDatasource _remoteDatasource;
+  final UssdRecentDatasource _recentDatasource;
 
   Future<Result<List<UssdItem>>> getUssdCodes() async {
     try {
@@ -25,6 +27,24 @@ class UssdRepository {
 
         return Result.success(data: ussdItems);
       }
+    } on UssdCodesServerException {
+      try {
+        final ussdItems = await _localDatasource.getUssdCodes();
+
+        return Result.success(data: ussdItems);
+      } on UssdCodesCacheException {
+        try {
+          final ussdItems = await _assetsDatasource.getUssdCodes();
+
+          await _localDatasource.saveUssdCodes(ussdItems, '');
+
+          return Result.success(data: ussdItems);
+        } on Exception {
+          return const Result.error(
+            message: 'Error al cargar los códigos ussd',
+          );
+        }
+      }
     } on UssdCodesCacheException {
       try {
         final ussdItems = await _assetsDatasource.getUssdCodes();
@@ -33,7 +53,9 @@ class UssdRepository {
 
         return Result.success(data: ussdItems);
       } on Exception {
-        return const Result.error(message: 'Error al cargar los códigos ussd');
+        return const Result.error(
+          message: 'Error al cargar los códigos ussd',
+        );
       }
     }
   }
@@ -64,5 +86,17 @@ class UssdRepository {
         message: 'Error al cargar códigos desde almacenamiento local',
       );
     }
+  }
+
+  Future<Result<List<UssdItem>>> getUssdCodesRecent() async {
+    final ussdItems = await _recentDatasource.getUssdCodes();
+
+    return Result.success(data: ussdItems);
+  }
+
+  Future<Result<List<UssdItem>>> putRecentUssdItem(UssdItem item) async {
+    final ussdItems = await _recentDatasource.putUssdItem(item);
+
+    return Result.success(data: ussdItems);
   }
 }
