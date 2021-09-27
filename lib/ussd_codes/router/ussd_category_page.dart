@@ -6,11 +6,15 @@ import 'package:todo/ussd_codes/ussd_codes.dart';
 class UssdCategoryPage extends BeamPage {
   UssdCategoryPage({
     required UssdCategory category,
+    bool? recent,
   }) : super(
             key: ValueKey('category-${category.name}'),
             title: category.name,
             type: BeamPageType.cupertino,
-            child: UssdCategoryView(category: category),
+            child: UssdCategoryView(
+              category: category,
+              recent: recent,
+            ),
             onPopPage: (context, delegate, page) {
               final categories = List<UssdCategory>.from(
                 delegate.currentBeamLocation.state.data['categories']
@@ -48,6 +52,7 @@ class UssdCategoryPage extends BeamPage {
   static void open(
     BuildContext context, {
     required UssdCategory category,
+    bool? recent,
   }) {
     final state = context.currentBeamLocation.state;
     final categories = state.data['categories'] != null
@@ -58,6 +63,7 @@ class UssdCategoryPage extends BeamPage {
       route(category.name),
       data: {
         'categories': categories..add(category),
+        'recent': recent,
       },
     );
   }

@@ -13,6 +13,8 @@ abstract class UssdItem extends Equatable {
   final String icon;
   final String type;
 
+  String get key => '$name-$description';
+
   @override
   List<Object> get props => [
         name,

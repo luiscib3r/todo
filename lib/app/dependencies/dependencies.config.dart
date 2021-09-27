@@ -17,9 +17,10 @@ import '../bloc/theme/theme_bloc.dart' as _i8;
 import '../data/core/platform/http_client/http_client.dart' as _i4;
 import '../data/datasources/ussd/ussd_assets_datasource.dart' as _i10;
 import '../data/datasources/ussd/ussd_local_datasource.dart' as _i12;
-import '../data/datasources/ussd/ussd_remote_datasource.dart' as _i13;
-import '../data/repositories/ussd_repository.dart' as _i14;
-import 'dependencies.dart' as _i15;
+import '../data/datasources/ussd/ussd_recent_datasource.dart' as _i13;
+import '../data/datasources/ussd/ussd_remote_datasource.dart' as _i14;
+import '../data/repositories/ussd_repository.dart' as _i15;
+import 'dependencies.dart' as _i16;
 
 const String _prod = 'prod';
 const String _dev = 'dev';
@@ -47,13 +48,16 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i11.UssdCodeBloc(get<_i6.UssdRepository>()));
   gh.factory<_i12.UssdLocalDatasource>(
       () => _i12.UssdLocalDatasource(get<_i7.SharedPreferences>()));
-  gh.factory<_i13.UssdRemoteDatasource>(() => _i13.UssdRemoteDatasource(
+  gh.factory<_i13.UssdRecentDatasource>(
+      () => _i13.UssdRecentDatasource(get<_i7.SharedPreferences>()));
+  gh.factory<_i14.UssdRemoteDatasource>(() => _i14.UssdRemoteDatasource(
       get<_i6.AppEnvironment>(), get<_i6.HttpClient>()));
-  gh.factory<_i14.UssdRepository>(() => _i14.UssdRepository(
+  gh.factory<_i15.UssdRepository>(() => _i15.UssdRepository(
       get<_i6.UssdAssetsDatasource>(),
       get<_i6.UssdLocalDatasource>(),
-      get<_i6.UssdRemoteDatasource>()));
+      get<_i6.UssdRemoteDatasource>(),
+      get<_i6.UssdRecentDatasource>()));
   return get;
 }
 
-class _$RegisterModule extends _i15.RegisterModule {}
+class _$RegisterModule extends _i16.RegisterModule {}

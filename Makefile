@@ -8,7 +8,7 @@ run:
 
 .PHONY: build
 build:
-	flutter build apk --flavor production --target lib/main_production.dart
+	flutter build apk --flavor production --target lib/main_production.dart --target-platform=android-arm
 
 .PHONY: run-prod
 run-prod:
@@ -16,7 +16,7 @@ run-prod:
 
 .PHONY: build-dev
 build-dev:
-	flutter build apk --flavor development --target lib/main_development.dart
+	flutter build apk --flavor development --target lib/main_development.dart --target-platform=android-arm
 
 .PHONY: splash
 splash:

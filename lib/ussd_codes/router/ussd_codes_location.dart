@@ -16,7 +16,10 @@ class UssdCodesLocation extends BeamLocation {
         HomePage(),
         if (UssdCategoryPage.checkBeamState(state))
           ...(state.data['categories'] as List<UssdCategory>).map(
-            (category) => UssdCategoryPage(category: category),
+            (category) => UssdCategoryPage(
+              category: category,
+              recent: state.data['recent'] as bool?,
+            ),
           ),
         if (UssdCodeFormPage.checkBeamState(state))
           UssdCodeFormPage(code: state.data['code'] as UssdCode),

@@ -4,7 +4,6 @@ import 'package:todo/app/app.dart';
 import 'package:todo/l10n/l10n.dart';
 import 'package:todo/settings/settings.dart';
 
-
 class DisclaimerView extends StatelessWidget {
   const DisclaimerView({
     Key? key,

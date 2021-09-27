@@ -29,13 +29,49 @@ class HomeView extends StatelessWidget {
               child: TabBarView(
                 children: [
                   BlocBuilder<UssdCodeBloc, UssdCodeState>(
+                    buildWhen: (prev, next) {
+                      return prev.maybeWhen(
+                        ready: (itemsPrev, recentsPrev) {
+                          return next.maybeWhen(
+                            ready: (itemsNext, recentsNext) =>
+                                itemsPrev != itemsNext,
+                            orElse: () => true,
+                          );
+                        },
+                        orElse: () => true,
+                      );
+                    },
                     builder: (context, state) => state.when(
                       loading: () => const Loading(),
-                      ready: (items) => UssdCodeView(items: items),
+                      ready: (items, recents) => UssdCodeView(
+                        items: items,
+                        recent: false,
+                      ),
                       error: (error) => Center(child: Text(error)),
                     ),
                   ),
-                  const Center(child: Text('DATA')),
+                  BlocBuilder<UssdCodeBloc, UssdCodeState>(
+                    buildWhen: (prev, next) {
+                      return prev.maybeWhen(
+                        ready: (itemsPrev, recentsPrev) {
+                          return next.maybeWhen(
+                            ready: (itemsNext, recentsNext) =>
+                                recentsPrev != recentsNext,
+                            orElse: () => true,
+                          );
+                        },
+                        orElse: () => true,
+                      );
+                    },
+                    builder: (context, state) => state.when(
+                      loading: () => const Loading(),
+                      ready: (items, recents) => UssdCodeView(
+                        items: recents,
+                        recent: true,
+                      ),
+                      error: (error) => Center(child: Text(error)),
+                    ),
+                  ),
                   const Center(child: Text('WIFI')),
                 ],
               ),

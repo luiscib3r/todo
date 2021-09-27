@@ -13,6 +13,14 @@ class UssdLocalDatasource {
 
   final SharedPreferences _storage;
 
+  Future<int?> getDay() async {
+    return _storage.getInt('day');
+  }
+
+  Future<void> updateDay() async {
+    await _storage.setInt('day', DateTime.now().day);
+  }
+
   Future<List<UssdItem>> getUssdCodes() async {
     final jsonString = _storage.getString(USSD_CODES_KEY);
 
@@ -35,6 +43,8 @@ class UssdLocalDatasource {
   }
 
   Future<void> saveUssdCodes(List<UssdItem> items, String hash) async {
+    await updateDay();
+
     final data = json.encode({
       'items': items.map((e) {
         if (e.type == 'code') {
@@ -45,6 +55,8 @@ class UssdLocalDatasource {
       }).toList()
     });
 
-    _storage..setString(USSD_CODES_KEY, data)..setString(USSD_CODES_HASH, hash);
+    _storage
+      ..setString(USSD_CODES_KEY, data)
+      ..setString(USSD_CODES_HASH, hash);
   }
 }
