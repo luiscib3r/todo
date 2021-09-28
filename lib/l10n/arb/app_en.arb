@@ -22,7 +22,10 @@
     "notSymbolsKey": "The key must not contain symbols",
     "digitsOfCard": "The card number must contain 16 digits",
     "talkWithUs": "Talk with us",
-    "accounts": "Cuentas",
+    "accounts": "Accounts",
+    "saveAccount": "Save Account",
+    "username": "Username",
+    "password": "Password",
     "updateUssdCodes": "Update USSD codes",
     "updateCodeSuccess": "Check successful, codes have been updated",
     "updateCodeError": "An error occurred while downloading the USSD codes. Please check your connection and try again."

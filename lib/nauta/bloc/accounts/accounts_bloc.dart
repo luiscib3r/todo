@@ -17,15 +17,28 @@ class AccountsBloc extends Bloc<AccountsEvent, AccountsState> {
           ),
         ) {
     on<_LoadData>(_loadData);
+    on<_RemoveAccount>(_removeAccount);
 
     add(const _LoadData());
   }
 
   final NautaRepository _repository;
 
-  Future<void> _loadData(_LoadData event, Emitter<AccountsState> emit) async {
+  Future<void> _loadData(
+    _LoadData event,
+    Emitter<AccountsState> emit,
+  ) async {
     final result = await _repository.findAllAccounts();
 
     emit(state.copyWith(loading: false, accounts: result));
+  }
+
+  Future<void> _removeAccount(
+    _RemoveAccount event,
+    Emitter<AccountsState> emit,
+  ) async {
+    await _repository.deleteAccount(event.id);
+
+    add(const _LoadData());
   }
 }

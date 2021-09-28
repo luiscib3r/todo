@@ -6,7 +6,7 @@ part 'nauta_account.g.dart';
 @JsonSerializable()
 class NautaAccount extends Equatable {
   const NautaAccount({
-    this.id = 0,
+    this.id,
     required this.username,
     required this.password,
   });
@@ -16,7 +16,7 @@ class NautaAccount extends Equatable {
 
   Map<String, dynamic> toJson() => _$NautaAccountToJson(this);
 
-  final int id;
+  final int? id;
   final String username;
   final String password;
 

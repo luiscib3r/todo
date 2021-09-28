@@ -8,7 +8,7 @@ part of 'nauta_account.dart';
 
 NautaAccount _$NautaAccountFromJson(Map<String, dynamic> json) {
   return NautaAccount(
-    id: json['id'] as int,
+    id: json['id'] as int?,
     username: json['username'] as String,
     password: json['password'] as String,
   );

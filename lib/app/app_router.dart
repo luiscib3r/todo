@@ -20,6 +20,9 @@ class AppRouter extends StatelessWidget {
         BlocProvider<UssdCodeBloc>(
           create: (context) => getIt(),
         ),
+        BlocProvider<AccountsBloc>(
+          create: (context) => getIt(),
+        ),
         BlocProvider<ThemeBloc>(
           create: (context) => getIt(),
         ),

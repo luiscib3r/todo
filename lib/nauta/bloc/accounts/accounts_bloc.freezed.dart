@@ -19,6 +19,12 @@ class _$AccountsEventTearOff {
   _LoadData loadData() {
     return const _LoadData();
   }
+
+  _RemoveAccount removeAccount(int id) {
+    return _RemoveAccount(
+      id,
+    );
+  }
 }
 
 /// @nodoc
@@ -29,22 +35,26 @@ mixin _$AccountsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadData,
+    required TResult Function(int id) removeAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadData,
+    TResult Function(int id)? removeAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadData value) loadData,
+    required TResult Function(_RemoveAccount value) removeAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadData value)? loadData,
+    TResult Function(_RemoveAccount value)? removeAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,6 +115,7 @@ class _$_LoadData implements _LoadData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadData,
+    required TResult Function(int id) removeAccount,
   }) {
     return loadData();
   }
@@ -113,6 +124,7 @@ class _$_LoadData implements _LoadData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadData,
+    TResult Function(int id)? removeAccount,
     required TResult orElse(),
   }) {
     if (loadData != null) {
@@ -125,6 +137,7 @@ class _$_LoadData implements _LoadData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadData value) loadData,
+    required TResult Function(_RemoveAccount value) removeAccount,
   }) {
     return loadData(this);
   }
@@ -133,6 +146,7 @@ class _$_LoadData implements _LoadData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadData value)? loadData,
+    TResult Function(_RemoveAccount value)? removeAccount,
     required TResult orElse(),
   }) {
     if (loadData != null) {
@@ -144,6 +158,122 @@ class _$_LoadData implements _LoadData {
 
 abstract class _LoadData implements AccountsEvent {
   const factory _LoadData() = _$_LoadData;
+}
+
+/// @nodoc
+abstract class _$RemoveAccountCopyWith<$Res> {
+  factory _$RemoveAccountCopyWith(
+          _RemoveAccount value, $Res Function(_RemoveAccount) then) =
+      __$RemoveAccountCopyWithImpl<$Res>;
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$RemoveAccountCopyWithImpl<$Res>
+    extends _$AccountsEventCopyWithImpl<$Res>
+    implements _$RemoveAccountCopyWith<$Res> {
+  __$RemoveAccountCopyWithImpl(
+      _RemoveAccount _value, $Res Function(_RemoveAccount) _then)
+      : super(_value, (v) => _then(v as _RemoveAccount));
+
+  @override
+  _RemoveAccount get _value => super._value as _RemoveAccount;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_RemoveAccount(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_RemoveAccount implements _RemoveAccount {
+  const _$_RemoveAccount(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'AccountsEvent.removeAccount(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _RemoveAccount &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+
+  @JsonKey(ignore: true)
+  @override
+  _$RemoveAccountCopyWith<_RemoveAccount> get copyWith =>
+      __$RemoveAccountCopyWithImpl<_RemoveAccount>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadData,
+    required TResult Function(int id) removeAccount,
+  }) {
+    return removeAccount(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadData,
+    TResult Function(int id)? removeAccount,
+    required TResult orElse(),
+  }) {
+    if (removeAccount != null) {
+      return removeAccount(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadData value) loadData,
+    required TResult Function(_RemoveAccount value) removeAccount,
+  }) {
+    return removeAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadData value)? loadData,
+    TResult Function(_RemoveAccount value)? removeAccount,
+    required TResult orElse(),
+  }) {
+    if (removeAccount != null) {
+      return removeAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RemoveAccount implements AccountsEvent {
+  const factory _RemoveAccount(int id) = _$_RemoveAccount;
+
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$RemoveAccountCopyWith<_RemoveAccount> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

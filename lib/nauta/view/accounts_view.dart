@@ -29,18 +29,23 @@ class AccountsView extends StatelessWidget {
             );
           }
 
-          return ListView(
-            children: [
-              ...state.accounts.map(
-                (e) => Text(e.username),
-              ),
-            ],
+          return Padding(
+            padding: const EdgeInsets.all(8),
+            child: ListView(
+              children: [
+                ...state.accounts.map(
+                  (e) => AccountTile(account: e),
+                ),
+              ],
+            ),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
-        onPressed: () {},
+        onPressed: () {
+          SaveAccountPage.open(context);
+        },
         child: const Icon(
           Icons.add,
           color: Colors.white,

@@ -17,6 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.0
+  flutter_form_bloc: ^0.20.6
   flutter_localizations:
     sdk: flutter
   font_awesome_flutter: ^9.1.0
