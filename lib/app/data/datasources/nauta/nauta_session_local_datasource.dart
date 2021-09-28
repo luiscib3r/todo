@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo/app/app.dart';
-import 'package:todo/app/data/models/nauta/nauta_session.dart';
 
 const NAUTA_SESSION_KEY = 'NAUTA_SESSION';
 

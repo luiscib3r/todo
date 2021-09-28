@@ -50,10 +50,13 @@ lib/
 │   │   ├── models
 │   │   │   ├── models.dart
 │   │   │   ├── nauta
-│   │   │   │   ├── nauta_account.dart
-│   │   │   │   ├── nauta_account.g.dart
-│   │   │   │   ├── nauta_session.dart
-│   │   │   │   └── nauta_session.g.dart
+│   │   │   │   ├── account
+│   │   │   │   │   ├── nauta_account.dart
+│   │   │   │   │   └── nauta_account.g.dart
+│   │   │   │   ├── nauta.dart
+│   │   │   │   └── session
+│   │   │   │       ├── nauta_session.dart
+│   │   │   │       └── nauta_session.g.dart
 │   │   │   └── ussd
 │   │   │       ├── category
 │   │   │       │   ├── ussd_category.dart
@@ -185,4 +188,4 @@ lib/
         ├── ussd_item_widget.dart
         └── widgets.dart
 
-51 directories, 134 files
+53 directories, 135 files

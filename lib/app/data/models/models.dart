@@ -1,2 +1,2 @@
-export 'nauta/nauta_account.dart';
+export 'nauta/nauta.dart';
 export 'ussd/ussd.dart';
