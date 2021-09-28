@@ -11,6 +11,18 @@ class AccountTile extends StatelessWidget {
 
   final NautaAccount account;
 
+  String accountType(AppLocalizations l10n) {
+    if (account.username.contains('@nauta.com.cu')) {
+      return l10n.internationalAccount;
+    }
+
+    if (account.username.contains('@nauta.co.cu')) {
+      return l10n.nationalAccount;
+    }
+
+    return l10n.specialAccount;
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -23,7 +35,7 @@ class AccountTile extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      subtitle: const Text(''),
+      subtitle: Text(accountType(l10n)),
       leading: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),

@@ -27,8 +27,12 @@ class SaveAccountBloc extends FormBloc<String, String> {
 
   @override
   Future<void> onSubmitting() async {
+    final userName = username.value!.contains('@')
+        ? username.value!
+        : '${username.value}@nauta.com.cu';
+
     final account = NautaAccount(
-      username: username.value!,
+      username: userName,
       password: password.value!,
     );
 

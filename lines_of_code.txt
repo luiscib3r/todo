@@ -17,7 +17,7 @@
     28 lib/ussd_codes/router/ussd_code_form_page.dart
     24 lib/main_staging.dart
     24 lib/main_production.dart
-    80 lib/nauta/widgets/account_tile.dart
+    92 lib/nauta/widgets/account_tile.dart
      1 lib/nauta/widgets/widgets.dart
      4 lib/nauta/nauta.dart
      2 lib/nauta/bloc/bloc.dart
@@ -25,7 +25,7 @@
     44 lib/nauta/bloc/accounts/accounts_bloc.dart
      7 lib/nauta/bloc/accounts/accounts_event.dart
      9 lib/nauta/bloc/accounts/accounts_state.dart
-    39 lib/nauta/bloc/save_account/save_account_bloc.dart
+    43 lib/nauta/bloc/save_account/save_account_bloc.dart
     56 lib/nauta/view/accounts_view.dart
     75 lib/nauta/view/save_account_view.dart
      2 lib/nauta/view/view.dart
@@ -126,4 +126,4 @@
      2 lib/home/router/router.dart
     15 lib/home/router/home_location.dart
     22 lib/home/router/home_page.dart
-  6597 total
+  6613 total
