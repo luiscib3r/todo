@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:todo/app/app.dart';
-import 'package:todo/l10n/l10n.dart';
 import 'package:todo/settings/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 

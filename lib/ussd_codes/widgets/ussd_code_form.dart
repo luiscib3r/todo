@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
-import 'package:todo/l10n/l10n.dart';
 
 class UssdCodeForm extends StatefulWidget {
   const UssdCodeForm({
