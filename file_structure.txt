@@ -38,7 +38,9 @@ lib/
 │   │   ├── datasources
 │   │   │   ├── datasources.dart
 │   │   │   ├── nauta
-│   │   │   │   └── nauta_account_datasource.dart
+│   │   │   │   ├── nauta_account_datasource.dart
+│   │   │   │   ├── nauta.dart
+│   │   │   │   └── nauta_session_local_datasource.dart
 │   │   │   └── ussd
 │   │   │       ├── ussd_assets_datasource.dart
 │   │   │       ├── ussd.dart
@@ -49,7 +51,9 @@ lib/
 │   │   │   ├── models.dart
 │   │   │   ├── nauta
 │   │   │   │   ├── nauta_account.dart
-│   │   │   │   └── nauta_account.g.dart
+│   │   │   │   ├── nauta_account.g.dart
+│   │   │   │   ├── nauta_session.dart
+│   │   │   │   └── nauta_session.g.dart
 │   │   │   └── ussd
 │   │   │       ├── category
 │   │   │       │   ├── ussd_category.dart
@@ -181,4 +185,4 @@ lib/
         ├── ussd_item_widget.dart
         └── widgets.dart
 
-51 directories, 130 files
+51 directories, 134 files

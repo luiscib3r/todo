@@ -19,13 +19,14 @@ import '../app_environment.dart' as _i5;
 import '../bloc/theme/theme_bloc.dart' as _i13;
 import '../data/core/platform/http_client/http_client.dart' as _i7;
 import '../data/datasources/nauta/nauta_account_datasource.dart' as _i8;
+import '../data/datasources/nauta/nauta_session_local_datasource.dart' as _i21;
 import '../data/datasources/ussd/ussd_assets_datasource.dart' as _i15;
 import '../data/datasources/ussd/ussd_local_datasource.dart' as _i17;
 import '../data/datasources/ussd/ussd_recent_datasource.dart' as _i18;
 import '../data/datasources/ussd/ussd_remote_datasource.dart' as _i19;
 import '../data/repositories/nauta_repository.dart' as _i9;
 import '../data/repositories/ussd_repository.dart' as _i20;
-import 'dependencies.dart' as _i21;
+import 'dependencies.dart' as _i22;
 
 const String _prod = 'prod';
 const String _dev = 'dev';
@@ -73,7 +74,9 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       get<_i4.UssdLocalDatasource>(),
       get<_i4.UssdRemoteDatasource>(),
       get<_i4.UssdRecentDatasource>()));
+  gh.factory<_i21.NautaSessionLocalDataSource>(
+      () => _i21.NautaSessionLocalDataSource(get<_i12.SharedPreferences>()));
   return get;
 }
 
-class _$RegisterModule extends _i21.RegisterModule {}
+class _$RegisterModule extends _i22.RegisterModule {}

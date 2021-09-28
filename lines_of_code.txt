@@ -53,7 +53,7 @@
     41 lib/app/app_environment.dart
     17 lib/app/app_bloc_observer.dart
     56 lib/app/app.dart
-    79 lib/app/dependencies/dependencies.config.dart
+    82 lib/app/dependencies/dependencies.config.dart
     36 lib/app/dependencies/dependencies.dart
     13 lib/app/data/core/utils/parse_json.dart
      2 lib/app/data/core/utils/utils.dart
@@ -70,6 +70,8 @@
     42 lib/app/data/core/platform/platform_channels.dart
    305 lib/app/data/core/result/result.freezed.dart
      9 lib/app/data/core/result/result.dart
+     2 lib/app/data/datasources/nauta/nauta.dart
+    31 lib/app/data/datasources/nauta/nauta_session_local_datasource.dart
     85 lib/app/data/datasources/nauta/nauta_account_datasource.dart
      2 lib/app/data/datasources/datasources.dart
     62 lib/app/data/datasources/ussd/ussd_local_datasource.dart
@@ -81,7 +83,9 @@
     25 lib/app/data/repositories/nauta_repository.dart
    102 lib/app/data/repositories/ussd_repository.dart
     29 lib/app/data/models/nauta/nauta_account.dart
+    55 lib/app/data/models/nauta/nauta_session.dart
     22 lib/app/data/models/nauta/nauta_account.g.dart
+    28 lib/app/data/models/nauta/nauta_session.g.dart
      2 lib/app/data/models/models.dart
     26 lib/app/data/models/ussd/category/ussd_category.g.dart
     65 lib/app/data/models/ussd/category/ussd_category.dart
@@ -126,4 +130,4 @@
      2 lib/home/router/router.dart
     15 lib/home/router/home_location.dart
     22 lib/home/router/home_page.dart
-  6613 total
+  6732 total
