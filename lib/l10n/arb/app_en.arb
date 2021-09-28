@@ -2,6 +2,7 @@
     "@@locale": "en",
     "appName": "TODO",
     "accept": "Accept",
+    "cancel": "Cancel",
     "fieldTypeError": "The field type {fieldType} is unknown",
     "@fieldTypeError": {
         "placeholders": {
@@ -24,6 +25,8 @@
     "talkWithUs": "Talk with us",
     "accounts": "Accounts",
     "saveAccount": "Save Account",
+    "removeAccount": "Remove Account",
+    "removeAccountMsg": "Are you sure you want to remove this account?",
     "username": "Username",
     "password": "Password",
     "updateUssdCodes": "Update USSD codes",

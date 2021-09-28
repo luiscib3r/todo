@@ -13,6 +13,7 @@ class AccountTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final accountsBloc = context.read<AccountsBloc>();
 
     return ListTile(
@@ -42,11 +43,36 @@ class AccountTile extends StatelessWidget {
       trailing: IconButton(
         icon: const Icon(Icons.delete),
         onPressed: () {
-          accountsBloc.add(
-            AccountsEvent.removeAccount(
-              account.id ?? -1,
-            ),
+          final cancelBtn = TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(l10n.cancel),
           );
+
+          final acceptBtn = TextButton(
+            onPressed: () {
+              accountsBloc.add(
+                AccountsEvent.removeAccount(
+                  account.id ?? -1,
+                ),
+              );
+
+              Navigator.pop(context);
+            },
+            child: Text(l10n.accept),
+          );
+
+          final dialog = AlertDialog(
+            title: Text(l10n.removeAccount),
+            content: Text(l10n.removeAccountMsg),
+            actions: [
+              cancelBtn,
+              acceptBtn,
+            ],
+          );
+
+          showDialog(context: context, builder: (_) => dialog);
         },
       ),
     );

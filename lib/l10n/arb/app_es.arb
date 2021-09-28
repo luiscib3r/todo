@@ -2,6 +2,7 @@
     "@@locale": "es",
     "appName": "TODO",
     "accept": "Aceptar",
+    "cancel": "Cancelar",
     "fieldTypeError": "El tipo de campo {fieldType} es desconocido",
     "@fieldTypeError": {
         "placeholders": {
@@ -24,6 +25,8 @@
     "talkWithUs": "Habla con nosotros",
     "accounts": "Cuentas",
     "saveAccount": "Guardar Cuenta",
+    "removeAccount": "Remover cuenta",
+    "removeAccountMsg": "¿Está seguro que desea remover esta cuenta?",
     "username": "Usuario",
     "password": "Contraseña",
     "updateUssdCodes": "Actualizar códigos USSD",

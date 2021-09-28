@@ -37,6 +37,8 @@ lib/
 │   │   ├── data.dart
 │   │   ├── datasources
 │   │   │   ├── datasources.dart
+│   │   │   ├── nauta
+│   │   │   │   └── nauta_account_datasource.dart
 │   │   │   └── ussd
 │   │   │       ├── ussd_assets_datasource.dart
 │   │   │       ├── ussd.dart
@@ -45,6 +47,9 @@ lib/
 │   │   │       └── ussd_remote_datasource.dart
 │   │   ├── models
 │   │   │   ├── models.dart
+│   │   │   ├── nauta
+│   │   │   │   ├── nauta_account.dart
+│   │   │   │   └── nauta_account.g.dart
 │   │   │   └── ussd
 │   │   │       ├── category
 │   │   │       │   ├── ussd_category.dart
@@ -58,6 +63,7 @@ lib/
 │   │   │       ├── ussd.dart
 │   │   │       └── ussd_item.dart
 │   │   └── repositories
+│   │       ├── nauta_repository.dart
 │   │       ├── repositories.dart
 │   │       └── ussd_repository.dart
 │   ├── dependencies
@@ -99,6 +105,29 @@ lib/
 ├── main_development.dart
 ├── main_production.dart
 ├── main_staging.dart
+├── nauta
+│   ├── bloc
+│   │   ├── accounts
+│   │   │   ├── accounts_bloc.dart
+│   │   │   ├── accounts_bloc.freezed.dart
+│   │   │   ├── accounts_event.dart
+│   │   │   └── accounts_state.dart
+│   │   ├── bloc.dart
+│   │   └── save_account
+│   │       └── save_account_bloc.dart
+│   ├── nauta.dart
+│   ├── router
+│   │   ├── accounts_page.dart
+│   │   ├── nauta_location.dart
+│   │   ├── router.dart
+│   │   └── save_account_page.dart
+│   ├── view
+│   │   ├── accounts_view.dart
+│   │   ├── save_account_view.dart
+│   │   └── view.dart
+│   └── widgets
+│       ├── account_tile.dart
+│       └── widgets.dart
 ├── settings
 │   ├── bloc
 │   │   ├── bloc.dart
@@ -152,4 +181,4 @@ lib/
         ├── ussd_item_widget.dart
         └── widgets.dart
 
-42 directories, 110 files
+51 directories, 130 files

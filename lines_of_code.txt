@@ -1,7 +1,7 @@
      4 lib/ussd_codes/ussd_codes.dart
     85 lib/ussd_codes/widgets/ussd_item_widget.dart
      2 lib/ussd_codes/widgets/widgets.dart
-   300 lib/ussd_codes/widgets/ussd_code_form.dart
+   299 lib/ussd_codes/widgets/ussd_code_form.dart
    689 lib/ussd_codes/bloc/ussd_code/ussd_code_bloc.freezed.dart
     66 lib/ussd_codes/bloc/ussd_code/ussd_code_bloc.dart
      7 lib/ussd_codes/bloc/ussd_code/ussd_code_event.dart
@@ -17,14 +17,30 @@
     28 lib/ussd_codes/router/ussd_code_form_page.dart
     24 lib/main_staging.dart
     24 lib/main_production.dart
+    80 lib/nauta/widgets/account_tile.dart
+     1 lib/nauta/widgets/widgets.dart
+     4 lib/nauta/nauta.dart
+     2 lib/nauta/bloc/bloc.dart
+   431 lib/nauta/bloc/accounts/accounts_bloc.freezed.dart
+    44 lib/nauta/bloc/accounts/accounts_bloc.dart
+     7 lib/nauta/bloc/accounts/accounts_event.dart
+     9 lib/nauta/bloc/accounts/accounts_state.dart
+    39 lib/nauta/bloc/save_account/save_account_bloc.dart
+    56 lib/nauta/view/accounts_view.dart
+    75 lib/nauta/view/save_account_view.dart
+     2 lib/nauta/view/view.dart
+    26 lib/nauta/router/save_account_page.dart
+    21 lib/nauta/router/accounts_page.dart
+     3 lib/nauta/router/router.dart
+    19 lib/nauta/router/nauta_location.dart
     20 lib/app/widgets/app_bar_title.dart
      6 lib/app/widgets/widgets.dart
-    72 lib/app/widgets/app_drawer.dart
+    73 lib/app/widgets/app_drawer.dart
     29 lib/app/widgets/theme_icon_button.dart
     12 lib/app/widgets/loading.dart
     40 lib/app/widgets/app_drawer_tile.dart
     47 lib/app/widgets/app_tab_bar.dart
-    57 lib/app/app_router.dart
+    61 lib/app/app_router.dart
      1 lib/app/bloc/bloc.dart
     53 lib/app/bloc/theme/theme_bloc.dart
    368 lib/app/bloc/theme/theme_bloc.freezed.dart
@@ -36,9 +52,9 @@
      7 lib/app/theme/app_bar_theme.dart
     41 lib/app/app_environment.dart
     17 lib/app/app_bloc_observer.dart
-    53 lib/app/app.dart
-    63 lib/app/dependencies/dependencies.config.dart
-    18 lib/app/dependencies/dependencies.dart
+    56 lib/app/app.dart
+    79 lib/app/dependencies/dependencies.config.dart
+    36 lib/app/dependencies/dependencies.dart
     13 lib/app/data/core/utils/parse_json.dart
      2 lib/app/data/core/utils/utils.dart
     27 lib/app/data/core/utils/icons.dart
@@ -54,15 +70,19 @@
     42 lib/app/data/core/platform/platform_channels.dart
    305 lib/app/data/core/result/result.freezed.dart
      9 lib/app/data/core/result/result.dart
-     1 lib/app/data/datasources/datasources.dart
+    85 lib/app/data/datasources/nauta/nauta_account_datasource.dart
+     2 lib/app/data/datasources/datasources.dart
     62 lib/app/data/datasources/ussd/ussd_local_datasource.dart
      4 lib/app/data/datasources/ussd/ussd.dart
-    27 lib/app/data/datasources/ussd/ussd_assets_datasource.dart
+    26 lib/app/data/datasources/ussd/ussd_assets_datasource.dart
     50 lib/app/data/datasources/ussd/ussd_remote_datasource.dart
     71 lib/app/data/datasources/ussd/ussd_recent_datasource.dart
-     1 lib/app/data/repositories/repositories.dart
+     2 lib/app/data/repositories/repositories.dart
+    25 lib/app/data/repositories/nauta_repository.dart
    102 lib/app/data/repositories/ussd_repository.dart
-     1 lib/app/data/models/models.dart
+    29 lib/app/data/models/nauta/nauta_account.dart
+    22 lib/app/data/models/nauta/nauta_account.g.dart
+     2 lib/app/data/models/models.dart
     26 lib/app/data/models/ussd/category/ussd_category.g.dart
     65 lib/app/data/models/ussd/category/ussd_category.dart
     39 lib/app/data/models/ussd/code/ussd_code.dart
@@ -88,9 +108,9 @@
      9 lib/settings/bloc/update_ussd/update_ussd_state.dart
    298 lib/settings/bloc/update_ussd/update_ussd_bloc.freezed.dart
      4 lib/settings/settings.dart
-    80 lib/settings/view/update_ussd_view.dart
-    52 lib/settings/view/disclaimer_view.dart
-    98 lib/settings/view/settings_view.dart
+    79 lib/settings/view/update_ussd_view.dart
+    51 lib/settings/view/disclaimer_view.dart
+    97 lib/settings/view/settings_view.dart
      3 lib/settings/view/view.dart
     32 lib/settings/router/disclaimer_page.dart
     32 lib/settings/router/update_ussd_page.dart
@@ -98,12 +118,12 @@
     28 lib/settings/router/settings_page.dart
     24 lib/settings/router/settings_location.dart
     15 lib/l10n/l10n.dart
-    18 lib/generated_plugin_registrant.dart
+    20 lib/generated_plugin_registrant.dart
      1 lib/home/widgets/widgets.dart
      3 lib/home/home.dart
-    84 lib/home/view/home_view.dart
+    83 lib/home/view/home_view.dart
      1 lib/home/view/view.dart
      2 lib/home/router/router.dart
     15 lib/home/router/home_location.dart
     22 lib/home/router/home_page.dart
-  5576 total
+  6597 total
