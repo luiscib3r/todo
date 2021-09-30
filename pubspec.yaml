@@ -19,6 +19,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.0
+  flutter_form_bloc: ^0.20.6
   flutter_localizations:
     sdk: flutter
   font_awesome_flutter: ^9.1.0
@@ -27,7 +28,9 @@ dependencies:
   injectable: ^1.5.0
   intl: ^0.17.0
   json_annotation: ^4.0.1
+  path: ^1.8.0
   shared_preferences: ^2.0.6
+  sqflite: ^2.0.0+4
   url_launcher: ^6.0.12
 
 dev_dependencies:

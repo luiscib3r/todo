@@ -6,7 +6,7 @@ import 'package:todo/app/app.dart';
 import 'package:todo/app/bloc/bloc.dart';
 import 'package:todo/app/theme/theme.dart';
 import 'package:todo/home/home.dart';
-import 'package:todo/l10n/l10n.dart';
+import 'package:todo/nauta/nauta.dart';
 import 'package:todo/settings/router/router.dart';
 import 'package:todo/ussd_codes/ussd_codes.dart';
 
@@ -18,6 +18,9 @@ class AppRouter extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<UssdCodeBloc>(
+          create: (context) => getIt(),
+        ),
+        BlocProvider<AccountsBloc>(
           create: (context) => getIt(),
         ),
         BlocProvider<ThemeBloc>(
@@ -51,6 +54,7 @@ class AppRouter extends StatelessWidget {
         HomeLocation(),
         UssdCodesLocation(),
         SettingsLocation(),
+        NautaLocation(),
       ],
     ),
   );

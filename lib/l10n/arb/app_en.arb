@@ -2,6 +2,7 @@
     "@@locale": "en",
     "appName": "TODO",
     "accept": "Accept",
+    "cancel": "Cancel",
     "fieldTypeError": "The field type {fieldType} is unknown",
     "@fieldTypeError": {
         "placeholders": {
@@ -22,7 +23,15 @@
     "notSymbolsKey": "The key must not contain symbols",
     "digitsOfCard": "The card number must contain 16 digits",
     "talkWithUs": "Talk with us",
-    "accounts": "Cuentas",
+    "accounts": "Accounts",
+    "saveAccount": "Save Account",
+    "removeAccount": "Remove Account",
+    "removeAccountMsg": "Are you sure you want to remove this account?",
+    "nationalAccount": "National navigation",
+    "internationalAccount": "International navigation",
+    "specialAccount": "Special service",
+    "username": "Username",
+    "password": "Password",
     "updateUssdCodes": "Update USSD codes",
     "updateCodeSuccess": "Check successful, codes have been updated",
     "updateCodeError": "An error occurred while downloading the USSD codes. Please check your connection and try again."

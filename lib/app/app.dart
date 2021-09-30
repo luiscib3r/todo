@@ -7,6 +7,9 @@ import 'package:todo/app/dependencies/dependencies.dart';
 import 'package:todo/app/theme/theme.dart';
 import 'package:todo/app/widgets/widgets.dart';
 
+export 'package:todo/gen/assets.gen.dart';
+export 'package:todo/l10n/l10n.dart';
+
 export 'app_environment.dart';
 export 'bloc/bloc.dart';
 export 'data/data.dart';

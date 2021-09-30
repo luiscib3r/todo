@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:todo/app/app.dart';
-import 'package:todo/gen/assets.gen.dart';
 
 @injectable
 class UssdAssetsDatasource {
