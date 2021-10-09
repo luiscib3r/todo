@@ -5,6 +5,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:todo/app/dependencies/dependencies.config.dart';
 
+export 'providers.dart';
+
 final getIt = GetIt.instance;
 
 @module
