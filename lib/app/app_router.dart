@@ -16,17 +16,7 @@ class AppRouter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider<UssdCodeBloc>(
-          create: (context) => getIt(),
-        ),
-        BlocProvider<AccountsBloc>(
-          create: (context) => getIt(),
-        ),
-        BlocProvider<ThemeBloc>(
-          create: (context) => getIt(),
-        ),
-      ],
+      providers: blocProviders,
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, themeState) {
           return MaterialApp.router(
