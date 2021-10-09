@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
     final l10n = context.l10n;
 
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           title: AppBarTitle(l10n.appName),
@@ -71,7 +71,7 @@ class HomeView extends StatelessWidget {
                       error: (error) => Center(child: Text(error)),
                     ),
                   ),
-                  const Center(child: Text('WIFI')),
+                  // const Center(child: Text('WIFI')),
                 ],
               ),
             ),

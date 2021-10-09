@@ -33,14 +33,14 @@ class AppTabBar extends StatelessWidget {
             size: 38,
           ),
         ),
-        SizedBox(
-          height: 64,
-          width: 68,
-          child: Icon(
-            Icons.wifi,
-            size: 38,
-          ),
-        ),
+        // SizedBox(
+        //   height: 64,
+        //   width: 68,
+        //   child: Icon(
+        //     Icons.wifi,
+        //     size: 38,
+        //   ),
+        // ),
       ],
     );
   }

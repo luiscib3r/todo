@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
-import 'package:todo/nauta/nauta.dart';
+// import 'package:todo/nauta/nauta.dart';
 import 'package:todo/settings/settings.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -45,13 +45,13 @@ class AppDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                AppDrawerTile(
-                  title: l10n.accounts,
-                  icon: Icons.account_circle_outlined,
-                  onTap: () {
-                    AccountsPage.open(context);
-                  },
-                ),
+                // AppDrawerTile(
+                //   title: l10n.accounts,
+                //   icon: Icons.account_circle_outlined,
+                //   onTap: () {
+                //     AccountsPage.open(context);
+                //   },
+                // ),
                 AppDrawerTile(
                   title: l10n.settings,
                   icon: Icons.settings_outlined,

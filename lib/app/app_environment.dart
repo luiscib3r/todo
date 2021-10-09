@@ -32,7 +32,7 @@ class AppEnvironmentProd extends AppEnvironment {
 class AppEnvironmentDev extends AppEnvironment {
   AppEnvironmentDev()
       : super(
-          appVersion: 'TODO v2.0-dev',
+          appVersion: 'TODO v2.0-beta',
           ussdCodesHashRemote:
               'https://todo-devs.github.io/todo-json/hash.json',
           ussdCodesRemote: 'https://todo-devs.github.io/todo-json/config.json',
