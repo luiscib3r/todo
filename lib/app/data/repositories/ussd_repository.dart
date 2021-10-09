@@ -21,29 +21,36 @@ class UssdRepository {
       final actualDay = DateTime.now().day;
 
       if (lastDay != actualDay) {
-        return getUssdCodesRemote();
+        final result = await getUssdCodesRemote();
+
+        return result.when(
+          success: (data) {
+            return Result.success(data: data);
+          },
+          error: (error) async {
+            try {
+              final ussdItems = await _localDatasource.getUssdCodes();
+
+              return Result.success(data: ussdItems);
+            } on UssdCodesCacheException {
+              try {
+                final ussdItems = await _assetsDatasource.getUssdCodes();
+
+                await _localDatasource.saveUssdCodes(ussdItems, '');
+
+                return Result.success(data: ussdItems);
+              } on Exception {
+                return const Result.error(
+                  message: 'Error al cargar los códigos ussd',
+                );
+              }
+            }
+          },
+        );
       } else {
         final ussdItems = await _localDatasource.getUssdCodes();
 
         return Result.success(data: ussdItems);
-      }
-    } on UssdCodesServerException {
-      try {
-        final ussdItems = await _localDatasource.getUssdCodes();
-
-        return Result.success(data: ussdItems);
-      } on UssdCodesCacheException {
-        try {
-          final ussdItems = await _assetsDatasource.getUssdCodes();
-
-          await _localDatasource.saveUssdCodes(ussdItems, '');
-
-          return Result.success(data: ussdItems);
-        } on Exception {
-          return const Result.error(
-            message: 'Error al cargar los códigos ussd',
-          );
-        }
       }
     } on UssdCodesCacheException {
       try {

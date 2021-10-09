@@ -6,13 +6,17 @@ generate:
 run:
 	flutter run --flavor development --target lib/main_development.dart
 
+.PHONY: run-prod
+run-prod:
+	flutter run --flavor production --target lib/main_production.dart
+
 .PHONY: build
 build:
 	flutter build apk --flavor production --target lib/main_production.dart --target-platform=android-arm
 
-.PHONY: run-prod
-run-prod:
-	flutter run --flavor production --target lib/main_production.dart
+.PHONY: build-stg
+build-stg:
+	flutter build apk --flavor staging --target lib/main_staging.dart --target-platform=android-arm
 
 .PHONY: build-dev
 build-dev:
