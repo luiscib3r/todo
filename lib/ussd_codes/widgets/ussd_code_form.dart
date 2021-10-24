@@ -144,7 +144,11 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
                             if (cant.isNegative) {
                               return l10n.greaterZero;
                             }
-                            if (value.split('.')[1].length > 2) {
+
+                            final doubleValue = value.split('.');
+
+                            if (doubleValue.length > 1 &&
+                                doubleValue[1].length > 2) {
                               return l10n.onlyMonetaryValues;
                             }
                           } on Exception {

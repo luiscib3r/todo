@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
@@ -13,6 +14,8 @@ final getIt = GetIt.instance;
 abstract class RegisterModule {
   @preResolve
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
+
+  Connectivity get connectivity => Connectivity();
 
   @preResolve
   Future<Database> get database async {

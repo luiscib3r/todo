@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:injectable/injectable.dart';
 import 'package:todo/app/app.dart';
 
@@ -8,19 +9,23 @@ class UssdRepository {
     this._localDatasource,
     this._remoteDatasource,
     this._recentDatasource,
+    this._connectivity,
   );
 
   final UssdAssetsDatasource _assetsDatasource;
   final UssdLocalDatasource _localDatasource;
   final UssdRemoteDatasource _remoteDatasource;
   final UssdRecentDatasource _recentDatasource;
+  final Connectivity _connectivity;
 
   Future<Result<List<UssdItem>>> getUssdCodes() async {
     try {
       final lastDay = await _localDatasource.getDay();
       final actualDay = DateTime.now().day;
 
-      if (lastDay != actualDay) {
+      final status = await _connectivity.checkConnectivity();
+
+      if (lastDay != actualDay && status != ConnectivityResult.none) {
         final result = await getUssdCodesRemote();
 
         return result.when(
