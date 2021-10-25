@@ -39,7 +39,7 @@ class UssdCategoryView extends StatelessWidget {
             height: 15,
           ),
           ...category.items.map(
-            (e) => FadeInLeft(
+            (e) => FadeInUp(
               duration: const Duration(milliseconds: 400),
               child: UssdItemWidget(
                 ussdItem: e,

@@ -29,7 +29,7 @@ class UssdCodeView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       children: [
         ...items.map(
-          (e) => FadeInLeft(
+          (e) => FadeInUp(
             duration: const Duration(milliseconds: 400),
             child: UssdItemWidget(
               ussdItem: e,

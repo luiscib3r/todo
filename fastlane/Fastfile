@@ -1,0 +1,42 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Build development flavor"
+  lane :build_development do
+    build_number = number_of_commits()
+    sh "flutter clean"
+    sh "flutter pub get"
+    sh "flutter build apk -t lib/main_development.dart --flavor development --build-number=#{build_number}"
+  end
+
+  desc "Build staging flavor"
+  lane :build_staging do
+    build_number = number_of_commits()
+    sh "flutter clean"
+    sh "flutter pub get"
+    sh "flutter build apk -t lib/main_staging.dart --flavor staging --build-number=#{build_number}"
+  end
+
+  desc "Build production flavor"
+  lane :build_production do
+    build_number = number_of_commits()
+    sh "flutter clean"
+    sh "flutter pub get"
+    sh "flutter build apk -t lib/main.dart --flavor production --build-number=#{build_number}"
+  end
+end

@@ -26,6 +26,7 @@ class HomeView extends StatelessWidget {
             ),
             Expanded(
               child: TabBarView(
+                physics: const BouncingScrollPhysics(),
                 children: [
                   BlocBuilder<UssdCodeBloc, UssdCodeState>(
                     buildWhen: (prev, next) {
