@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
 import 'package:todo/ussd_codes/ussd_codes.dart';
@@ -19,6 +20,7 @@ class UssdCategoryView extends StatelessWidget {
         title: AppBarTitle(category.name),
       ),
       body: ListView(
+        physics: const BouncingScrollPhysics(),
         children: [
           const SizedBox(
             height: 15,
@@ -37,9 +39,12 @@ class UssdCategoryView extends StatelessWidget {
             height: 15,
           ),
           ...category.items.map(
-            (e) => UssdItemWidget(
-              ussdItem: e,
-              recent: recent,
+            (e) => FadeInLeft(
+              duration: const Duration(milliseconds: 400),
+              child: UssdItemWidget(
+                ussdItem: e,
+                recent: recent,
+              ),
             ),
           ),
           const SizedBox(

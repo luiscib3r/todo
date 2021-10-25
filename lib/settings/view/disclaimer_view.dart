@@ -20,6 +20,7 @@ class DisclaimerView extends StatelessWidget {
         title: AppBarTitle(l10n.termOfUse),
       ),
       body: ListView(
+        physics: const BouncingScrollPhysics(),
         children: [
           const SizedBox(
             height: 20,

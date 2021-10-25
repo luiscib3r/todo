@@ -22,7 +22,7 @@ class SaveAccountView extends StatelessWidget {
           AccountsPage.open(context);
         },
         child: SingleChildScrollView(
-          physics: const ClampingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: AutofillGroup(
             child: Padding(
               padding: const EdgeInsets.all(8),

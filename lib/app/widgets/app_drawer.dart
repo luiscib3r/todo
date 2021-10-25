@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/app/app.dart';
 // import 'package:todo/nauta/nauta.dart';
@@ -17,17 +18,20 @@ class AppDrawer extends StatelessWidget {
         child: Stack(
           children: [
             ListView(
+              physics: const BouncingScrollPhysics(),
               children: [
                 DrawerHeader(
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Container(
-                          margin: const EdgeInsets.all(10),
-                          child: Assets.images.logo.image(
-                            width: 75,
-                            height: 75,
+                        ZoomIn(
+                          child: Container(
+                            margin: const EdgeInsets.all(10),
+                            child: Assets.images.logo.image(
+                              width: 75,
+                              height: 75,
+                            ),
                           ),
                         ),
                         Text(

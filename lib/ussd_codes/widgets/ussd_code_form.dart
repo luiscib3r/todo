@@ -42,6 +42,7 @@ class _UssdCodeFormState extends State<UssdCodeForm> {
     return Form(
       key: _formKey,
       child: ListView(
+        physics: const BouncingScrollPhysics(),
         children: [
           widget.icon,
           const SizedBox(height: 30),

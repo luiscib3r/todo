@@ -26,6 +26,7 @@ class SettingsView extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(30),
             child: ListView(
+              physics: const BouncingScrollPhysics(),
               children: [
                 const SizedBox(height: 30),
                 SettingsSwitch(

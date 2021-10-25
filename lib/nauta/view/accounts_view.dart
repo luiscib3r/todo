@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo/app/app.dart';
@@ -32,9 +33,10 @@ class AccountsView extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(8),
             child: ListView(
+              physics: const BouncingScrollPhysics(),
               children: [
                 ...state.accounts.map(
-                  (e) => AccountTile(account: e),
+                  (e) => FadeInUp(child: AccountTile(account: e)),
                 ),
               ],
             ),

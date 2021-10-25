@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:todo/app/app.dart';
@@ -25,11 +26,15 @@ class UssdCodeView extends StatelessWidget {
     }
 
     return ListView(
+      physics: const BouncingScrollPhysics(),
       children: [
         ...items.map(
-          (e) => UssdItemWidget(
-            ussdItem: e,
-            recent: recent,
+          (e) => FadeInLeft(
+            duration: const Duration(milliseconds: 400),
+            child: UssdItemWidget(
+              ussdItem: e,
+              recent: recent,
+            ),
           ),
         )
       ],
